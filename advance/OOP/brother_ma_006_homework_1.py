@@ -21,13 +21,13 @@ class RandomGen:
         self.count = count
 
     def generate(self, start=1, stop=1000, count=1000):
-        return [random.randint(self.start, self.stop) for x in range(self.count)]
+        return [random.randint(self.start, self.stop) for _ in range(self.count)]
 
 
 class RandomToolGene:
     @classmethod
     def generate(cls, start=1, stop=100, count=10):
-        return [random.randint(start, stop) for x in range(count)]
+        return [random.randint(start, stop) for _ in range(count)]
 
 
 class RandomToolGenerator:
@@ -44,6 +44,15 @@ class RandomToolGenerator:
     def generate(self, count):
         self.count = count
         return next(self.gen)
+
+
+class Point(object):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        return "({},{})".format(self.x, self.y)
 
 
 if __name__ == '__main__':
@@ -64,3 +73,7 @@ if __name__ == '__main__':
     print(rg.__dict__)
     lst = rg.generate(10)
     print(lst)
+
+    print("*************************Point*************************************")
+    lst1 = [Point(x, y) for x, y in zip(rg.generate(10), rg.generate(10))]
+    print(lst1)
