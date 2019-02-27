@@ -55,6 +55,25 @@ class Point(object):
         return "({},{})".format(self.x, self.y)
 
 
+class Car(object):
+    def __init__(self, mark, color, price, speed):
+        self.mark = mark
+        self.color = color
+        self.price = price
+        self.speed = speed
+
+
+class CarInfo(object):
+    def __init__(self):
+        self.lst = []
+
+    def add_car(self, car: Car):
+        self.lst.append(car)
+
+    def get_all(self):
+        return self.lst
+
+
 if __name__ == '__main__':
     print("******************RandomGene**************************************")
     little_data = RandomGen(1, 100, 10)
@@ -77,3 +96,9 @@ if __name__ == '__main__':
     print("*************************Point*************************************")
     lst1 = [Point(x, y) for x, y in zip(rg.generate(10), rg.generate(10))]
     print(lst1)
+
+    print("*************************Car***************************************")
+    car = Car('audi', 'red', 100, 100)
+    ci = CarInfo()
+    ci.add_car(car)
+    print(ci.get_all())
