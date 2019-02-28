@@ -74,6 +74,58 @@ class CarInfo(object):
         return self.lst
 
 
+class Temperature:
+    def __init__(self, t, unit='c'):
+        self._c = None
+        self._f = None
+        self._k = None
+
+        if unit == 'k':
+            pass
+        elif unit == 'f':
+            pass
+        else:
+            self._c = t
+
+    @property
+    def c(self):
+        return self._c
+
+    @property
+    def k(self):
+        pass
+
+    @property
+    def f(self):
+        pass
+
+    @classmethod
+    def c2f(cls, c):
+        return 9*c/5+32
+
+    @classmethod
+    def f2c(cls, f):
+        return 5*(f-32)/9
+
+    @classmethod
+    def c2k(cls, c):
+        return c + 273.15
+
+    @classmethod
+    def k2c(cls, k):
+        return k - 273.15
+
+    @classmethod
+    def f2k(cls, f):
+        return cls.c2k(cls.f2c(f))
+
+    @classmethod
+    def k2f(cls, k):
+        return cls.c2f(cls.k2c(k))
+
+
+
+
 if __name__ == '__main__':
     print("******************RandomGene**************************************")
     little_data = RandomGen(1, 100, 10)
