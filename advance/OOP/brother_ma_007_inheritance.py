@@ -11,42 +11,66 @@ Description: some examples for inheritance
 
 
 class Animal(object):
+    x = 123
+
     def __init__(self, name):
         self._name = name
+        self.__age = 10
 
     def shout(self):
-        # print('Animal shouts')
-        print('{} shouts'.format(self.__class__.__name__))
+        print('Animal shouts')
+        # print('{} shouts'.format(self.__class__.__name__))
 
     @property
     def name(self):
         return self._name
 
 
-a = Animal('monster')
-a.shout()
-
-
 class Cat(Animal):
-    # def shout(self):
-    #     print('Cat shouts')
+    x = 'cat'
+
+    def __init__(self, name):
+        Animal.__init__(self, name)
+        self._name = "cat"+name
+        self.__age = 20
+
+
+    def shout(self):
+        print('Cat shouts')
+
+
+class Garfied(Cat):
     pass
-
-
-# c = Cat()
-# c.shout()
-
-cat = Cat('garfield')
-cat.shout()
-print(cat.name)
 
 
 class Dog(Animal):
-    pass
+    def run(self):
+        print('Dog run')
 
 
-dog = Dog('ahuang')
-dog.shout()
-print(dog.name)
+tom = Garfied('tom')
+print(tom.name)
+print(tom.shout())
+print(tom.__dict__)
+print(Garfied.__dict__)
+print(Cat.__dict__)
+print(Animal.__dict__)
+
+# a = Animal('monster')
+# a.shout()
+#
+#
+# cat = Cat('garfield')
+# cat.shout()
+# print(cat.name)
+# print(cat.__age)
+# print(cat.__dict__)
+#
+#
+# dog = Dog('ahuang')
+# dog.shout()
+# print(dog.name)
+# print('cat.mro = {}'.format(cat.__class__.__mro__))
+# print('cat.base = {}'.format(cat.__class__.__bases__))
 
 
