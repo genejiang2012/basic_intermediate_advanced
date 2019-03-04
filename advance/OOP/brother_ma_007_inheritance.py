@@ -34,7 +34,6 @@ class Cat(Animal):
         self._name = "cat"+name
         self.__age = 20
 
-
     def shout(self):
         print('Cat shouts')
 
