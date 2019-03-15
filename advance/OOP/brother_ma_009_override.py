@@ -12,10 +12,12 @@ class Animal:
 
 
 class Cat(Animal):
+    x = 10
     def shout(self):
         print('miao')
 
     def shout(self):
+        print(self.__class__.mro())
         print(super())
         print(super(Cat, self))
         super(Cat, self).shout()
@@ -24,6 +26,7 @@ class Cat(Animal):
 
     @classmethod
     def define_cls_method(cls):
+        print(cls.x)
         print('class_method_cat')
 
     @staticmethod
