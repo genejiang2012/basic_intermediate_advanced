@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python4
 # -*- coding: utf-8 -*-
 
 """
@@ -15,14 +15,15 @@ class Person(object):
 
     def define_nomal_method():
         print("normal")
-     
+        return 1
+
     def method(self):
         print("{}'s method'".format(self))
-    
+
     @classmethod
     def define_class_method(cls):
         print("class={0.__name__} {0}".format(cls))
-        cls.height = 170
+        cls.height = 180
 
     @staticmethod
     def define_static_method():
