@@ -13,6 +13,7 @@ class Animal:
 
 class Cat(Animal):
     x = 10
+
     def shout(self):
         print('miao')
 
