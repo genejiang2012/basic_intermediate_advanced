@@ -1,0 +1,790 @@
+
+set header='
+--------------------------------------------------
+-- # File Name: dw_das.tag_rv_app_action.sql
+-- # Description: 
+-- # Developer:    litao
+-- # Created on:   2018/10/11
+-- # Location:     /data/azkaban/etl/prod/hql/pilot/dw_das/
+-- # Revision History:
+-- #
+-- # Name             Date            Description
+-- # ---------------  --------------  --------------
+-- # litao            2018/10/11     Initial Version
+-- #------------------------------------------------
+--------------------------------------------------
+';
+
+
+set comment='生成房车APP登录日志临时视图';
+
+create or replace temporary view rv2go_rv_web_login_log_view as
+select login_mobile as mobile,
+       create_date,
+       substr(create_date, 1, 10) as login_datekey, --登录日期
+       substr(create_date, 1, 7) as login_month, --登录年月
+       hour(create_date) as date_hour, --登录小时
+       concat(year(create_date), weekofyear(create_date)) as login_week, --登录年周
+       concat(year(date_sub(current_date(), 7)),weekofyear(date_sub(current_date(), 7))) as last_week_of_year, ---当前时间的上一周 
+       substr(add_months(current_date(), -1), 1, 7) as last_month_of_year, --当前时间的上一月 
+       datediff(current_date, create_date) as range_days, --登录日期距今天数
+       row_number() over(partition by login_mobile order by create_date desc) rank --登录日期顺排序
+  from (select case
+                 when a.login_mobile <> 'null' then
+                  a.login_mobile
+                 else
+                  b.mobile
+               end as login_mobile,
+               a.create_date
+          from tag_source_data.rv2go_rv_web_login_log a
+          left join tag_source_data.rv2go_rv_web_user b on a.create_user_id = b.id --补充登录成功只有user_id的手机号
+         where a.status = 1) s;
+
+
+set comment='房车APP登录访问标签';
+
+insert overwrite table tag_source_data.tag_app_login_info
+select t.mobile,
+       case
+         when t.login_sum_cnts >= 1 and t.login_sum_cnts <= 3 then
+          '1~3次'
+         when t.login_sum_cnts >= 4 and t.login_sum_cnts <= 6 then
+          '4~6次'
+         when t.login_sum_cnts >= 7 and t.login_sum_cnts <= 10 then
+          '7~10次'
+         when t.login_sum_cnts >= 11 and t.login_sum_cnts <= 15 then
+          '11~15次'
+         when t.login_sum_cnts >= 16 and t.login_sum_cnts <= 20 then
+          '16~20次'
+         when t.login_sum_cnts >= 21 and t.login_sum_cnts <= 30 then
+          '21~30次'
+         when t.login_sum_cnts >= 31 and t.login_sum_cnts <= 40 then
+          '31~40次'
+         when t.login_sum_cnts >= 41 and t.login_sum_cnts <= 50 then
+          '41~50次'
+         when t.login_sum_cnts >= 51 and t.login_sum_cnts <= 60 then
+          '51~60次'
+         when t.login_sum_cnts >= 61 and t.login_sum_cnts <= 70 then
+          '61~70次'
+         when t.login_sum_cnts > 71 and t.login_sum_cnts <= 80 then
+          '71~80次'
+         when t.login_sum_cnts > 81 and t.login_sum_cnts <= 90 then
+          '81~90次'
+         when t.login_sum_cnts >= 91 and t.login_sum_cnts <= 100 then
+          '91~100次'
+         when t.login_sum_cnts > 100 then
+          '大于100次'
+       end as login_sum_cnts, --访问总次数
+       case
+         when t.last_month_login_cnts >= 1 and t.last_month_login_cnts <= 3 then
+          '1~3次'
+         when t.last_month_login_cnts >= 4 and t.last_month_login_cnts <= 6 then
+          '4~6次'
+         when t.last_month_login_cnts >= 7 and t.last_month_login_cnts <= 10 then
+          '7~10次'
+         when t.last_month_login_cnts >= 11 and
+              t.last_month_login_cnts <= 15 then
+          '11~15次'
+         when t.last_month_login_cnts >= 16 and
+              t.last_month_login_cnts <= 20 then
+          '16~20次'
+         when t.last_month_login_cnts > 20 then
+          '大于20次'
+         when t.last_month_login_cnts = 0 then
+          '0次'
+       end as last_month_login_cnts, --上月登录次数
+       case
+         when t.last_week_login_cnts = 1 then
+          '1次'
+         when t.last_week_login_cnts = 2 then
+          '2次'
+         when t.last_week_login_cnts = 3 then
+          '3次'
+         when t.last_week_login_cnts = 4 then
+          '4次'
+         when t.last_week_login_cnts = 5 then
+          '5次'
+         when t.last_week_login_cnts > 5 then
+          '大于5次'
+         when t.last_week_login_cnts = 0 then
+          '0次'
+       end as last_week_login_cnts, --上周登录次数
+       t1.is_login_yesterday, --是否昨天登录
+       case
+         when t1.last_login_days <= 3 then
+          '1~3天'
+         when t1.last_login_days >= 4 and t1.last_login_days <= 7 then
+          '4~7天'
+         when t1.last_login_days >= 8 and t1.last_login_days <= 15 then
+          '8~15天'
+         when t1.last_login_days >= 16 and t1.last_login_days <= 30 then
+          '16~30天'
+         when t1.last_login_days >= 31 and t1.last_login_days <= 60 then
+          '31~60天'
+         when t1.last_login_days >= 61 and t1.last_login_days <= 90 then
+          '61~90天'
+         when t1.last_login_days > 90 then
+          '90天以上'
+       end as last_login_days, --最后打开时间距今天数
+       t1.loss_user, --流失用户
+       case
+         when t2.login_hour_prefer >= 1 and t2.login_hour_prefer <= 6 then
+          '1-6点'
+         when t2.login_hour_prefer >= 7 and t2.login_hour_prefer <= 9 then
+          '7-9点'
+         when t2.login_hour_prefer >= 10 and t2.login_hour_prefer <= 12 then
+          '10-12点'
+         when t2.login_hour_prefer >= 13 and t2.login_hour_prefer <= 15 then
+          '13-15点'
+         when t2.login_hour_prefer >= 16 and t2.login_hour_prefer <= 19 then
+          '16-19点'
+         when t2.login_hour_prefer >= 20 and t2.login_hour_prefer <= 22 then
+          '20-22点'
+         when t2.login_hour_prefer = 23 or t2.login_hour_prefer = 0 then
+          '23-0点'
+       end as login_hour_prefer, --app访问偏好
+       case
+         when nvl(t3.login_times, 0) >= 6 then
+          '高活跃'
+         when nvl(t3.login_times, 0) between 3 and 5 then
+          '平凡'
+         when nvl(t3.login_times, 0) < 3 then
+          '低活跃'
+       end as active_user, --用户活跃度
+       from_unixtime(unix_timestamp(), 'yyyy-MM-dd HH:mm:ss') as op_time --操作时间
+  from (select mobile,
+               count(distinct login_datekey) as login_sum_cnts, ---访问总次数
+               sum(case
+                     when login_cnts = 1 and last_month_of_year = login_month then
+                      1
+                     when login_cnts >= 2 and last_month_of_year = login_month then
+                      2
+                     else
+                      0
+                   end) as last_month_login_cnts, ---上月访问次数
+               count(distinct case
+                       when login_week = last_week_of_year then
+                        login_datekey
+                     end) as last_week_login_cnts ---上周访问次数
+          from (select mobile,
+                       login_datekey,
+                       login_week,
+                       login_month,
+                       last_month_of_year,
+                       last_week_of_year,
+                       count(distinct create_date) as login_cnts --每天登录次数
+                  from rv2go_rv_web_login_log_view
+                 group by mobile,
+                          login_datekey,
+                          login_week,
+                          login_month,
+                          last_month_of_year,
+                          last_week_of_year) s
+         group by mobile) t
+  left join (select mobile,
+                    case
+                      when range_days = 1 then
+                       '是'
+                      else
+                       '否'
+                    end as is_login_yesterday, ---是否昨天登录
+                    range_days as last_login_days, ---最后打开时间距今天数
+                    case
+                      when range_days > 60 and range_days <= 180 then
+                       '60天流失用户'
+                      when range_days > 180 then
+                       '180天流失'
+                    end as loss_user
+               from rv2go_rv_web_login_log_view
+              where rank = 1) t1 on t1.mobile = t.mobile
+  left join (select mobile, date_hour as login_hour_prefer
+               from (select mobile,
+                            date_hour,
+                            row_number() over(partition by mobile order by cnts desc) rank
+                       from (select mobile, date_hour, count(1) as cnts
+                               from rv2go_rv_web_login_log_view
+                              group by mobile, date_hour) m) n
+              where rank = 1) t2 on t.mobile = t2.mobile
+  left join (select count(distinct login_datekey) as login_times, mobile
+               from rv2go_rv_web_login_log_view
+              where create_date >= date_sub(current_date, 30) --最近一个月
+              group by mobile) t3 on t.mobile = t3.mobile;
+
+--------------------------------------------------------------------------------------------------------------------
+
+set comment='房车用户APP版块点击数据';
+drop table if exists default.rv_app_page_event_detail;		 
+create table default.rv_app_page_event_detail as 
+select regexp_extract(curl,'https://app.rv2go.com/api/h5/(.*)(/detail.*)',1) as page_type, --访问APP的页面
+       mobile, --手机号
+       dt, --访问日期
+       concat(year(dt), weekofyear(dt)) as week_of_year, --访问周 
+       concat(year(date_sub(current_date(), 7)), weekofyear(date_sub(current_date(), 7))) as last_week_of_year, ---当前时间的上一周
+       concat(year(dt), month(dt)) as month_of_year, --访问月份
+       concat(year(add_months(current_date(), -1)), month(add_months(current_date(), -1))) as last_month_of_year --当前时间的上一月
+  from analytics.effective_session_event_detail
+ where site_id = 'CCS81201'
+   and curl like 'https://app.rv2go.com/api/h5%'
+   and dt >= '2018-04-13';	
+
+   
+---去旅行标签表
+
+insert overwrite table tag_source_data.tag_rv_travel_page_event_click
+select mobile,
+       case
+         when last_month_of_year = month_of_year then
+          '上月访问'
+       end as is_last_month_view,
+       case
+         when week_of_year = last_week_of_year then
+          '上周访问'
+       end as is_last_week_view,
+       current_timestamp as op_time --操作时间
+  from default.rv_app_page_event_detail
+ where page_type='travel';
+  
+---攻略标签表
+
+insert overwrite table tag_source_data.tag_rv_strategy_page_event_click
+select mobile,
+       case
+         when last_month_of_year = month_of_year then
+          '上月访问'
+       end as is_last_month_view,
+       case
+         when week_of_year = last_week_of_year then
+          '上周访问'
+       end as is_last_week_view,
+       current_timestamp as op_time --操作时间
+  from default.rv_app_page_event_detail
+ where page_type='strategy';			  
+			  
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+			  
+set comment='房车用户信息&APP行为标签';
+
+insert overwrite table tag_source_data.tag_app_action_info
+  select id,
+         case
+           when age < 18 then
+            '18岁以下'
+           when age >= 18 and age <= 30 then
+            '18~30岁'
+           when age >= 31 and age <= 40 then
+            '31~40岁'
+           when age >= 41 and age <= 50 then
+            '41~50岁'
+           when age >= 51 and age <= 60 then
+            '51~60岁'
+           when age > 60 and age < 999 then
+            '大于60岁'
+         end age,
+         sex,
+         province,
+         city,
+         case
+           when review_cnts >= 1 and review_cnts <= 3 then
+            '1~3次'
+           when review_cnts >= 4 and review_cnts <= 6 then
+            '4~6次'
+           when review_cnts >= 7 and review_cnts <= 10 then
+            '7~10次'
+           when review_cnts >= 11 and review_cnts <= 15 then
+            '11~15次'
+           when review_cnts = 0 then
+            '0次'
+           when review_cnts >= 16 and review_cnts <= 20 then
+            '16~20次'
+           when review_cnts > 20 then
+            '大于20次'
+         end as review_cnts,
+         case
+           when travel_cnts >= 1 and travel_cnts <= 3 then
+            '1~3次'
+           when travel_cnts >= 4 and travel_cnts <= 6 then
+            '4~6次'
+           when travel_cnts >= 7 and travel_cnts <= 10 then
+            '7~10次'
+           when travel_cnts = 0 then
+            '0次'
+           when travel_cnts >= 11 and travel_cnts <= 15 then
+            '11~15次'
+           when travel_cnts >= 16 and travel_cnts <= 20 then
+            '16~20次'
+           when travel_cnts > 20 then
+            '大于20次'
+         end travel_cnts,
+         case
+           when strategy_cnts >= 1 and strategy_cnts <= 3 then
+            '1~3次'
+           when strategy_cnts >= 4 and strategy_cnts <= 6 then
+            '4~6次'
+           when strategy_cnts >= 7 and strategy_cnts <= 10 then
+            '7~10次'
+           when strategy_cnts = 0 then
+            '0次'
+           when strategy_cnts >= 11 and strategy_cnts <= 15 then
+            '11~15次'
+           when strategy_cnts >= 16 and strategy_cnts <= 20 then
+            '16~20次'
+           when strategy_cnts > 20 then
+            '大于20次'
+         end as strategy_cnts,
+         case
+           when thumb_up_cnts >= 1 and thumb_up_cnts <= 3 then
+            '1~3次'
+           when thumb_up_cnts >= 4 and thumb_up_cnts <= 6 then
+            '4~6次'
+           when thumb_up_cnts >= 7 and thumb_up_cnts <= 10 then
+            '7~10次'
+           when thumb_up_cnts >= 11 and thumb_up_cnts <= 15 then
+            '11~15次'
+           when thumb_up_cnts >= 16 and thumb_up_cnts <= 20 then
+            '16~20次'
+           when thumb_up_cnts = 0 then
+            '0次'
+           when thumb_up_cnts > 20 then
+            '大于20次'
+         end as thumb_up_cnts,
+         case
+           when concern_cnts = 1 then
+            '1个'
+           when concern_cnts = 2 then
+            '2个'
+           when concern_cnts = 3 then
+            '3个'
+           when concern_cnts = 4 then
+            '4个'
+           when concern_cnts = 5 then
+            '5个'
+           when concern_cnts > 5 then
+            '大于5个'
+           when concern_cnts = 0 then
+            '0个'
+         end as concern_cnts,
+         case
+           when good_travel_cnts >= 1 and good_travel_cnts <= 3 then
+            '1~3次'
+           when good_travel_cnts >= 4 and good_travel_cnts <= 6 then
+            '4~6次'
+           when good_travel_cnts >= 7 and good_travel_cnts <= 10 then
+            '7~10次'
+           when good_travel_cnts >= 11 and good_travel_cnts <= 15 then
+            '11~15次'
+           when good_travel_cnts >= 16 and good_travel_cnts <= 20 then
+            '16~20次'
+           when good_travel_cnts > 20 then
+            '大于20次'
+           when good_travel_cnts = 0 then
+            '0次'
+         end as ood_travel_cnts,
+         case
+           when shoot_cnts >= 1 and shoot_cnts <= 3 then
+            '1~3次'
+           when shoot_cnts >= 4 and shoot_cnts <= 6 then
+            '4~6次'
+           when shoot_cnts >= 7 and shoot_cnts <= 10 then
+            '7~10次'
+           when shoot_cnts >= 11 and shoot_cnts <= 15 then
+            '11~15次'
+           when shoot_cnts >= 16 and shoot_cnts <= 20 then
+            '16~20次'
+           when shoot_cnts > 20 then
+            '大于20次'
+           when shoot_cnts = 0 then
+            '0次'
+         end as shoot_cnts,
+         case
+           when question_cnts >= 1 and question_cnts <= 3 then
+            '1~3次'
+           when question_cnts >= 4 and question_cnts <= 6 then
+            '4~6次'
+           when question_cnts >= 7 and question_cnts <= 10 then
+            '7~10次'
+           when question_cnts >= 11 and question_cnts <= 15 then
+            '11~15次'
+           when question_cnts >= 16 and question_cnts <= 20 then
+            '16~20次'
+           when question_cnts > 20 then
+            '大于20次'
+           when question_cnts = 0 then
+            '0次'
+         end as question_cnts,
+         case
+           when answers_cnts >= 1 and answers_cnts <= 3 then
+            '1~3次'
+           when answers_cnts >= 4 and answers_cnts <= 6 then
+            '4~6次'
+           when answers_cnts >= 7 and answers_cnts <= 10 then
+            '7~10次'
+           when answers_cnts >= 11 and answers_cnts <= 15 then
+            '11~15次'
+           when answers_cnts >= 16 and answers_cnts <= 20 then
+            '16~20次'
+           when answers_cnts > 20 then
+            '大于20次'
+           when answers_cnts = 0 then
+            '0次'
+         end as answers_cnts,
+         case
+           when ugc_cnts >= 4 then
+            '一级UGC'
+           when ugc_cnts >= 2 and ugc_cnts <= 3 then
+            '二级UGC'
+           when ugc_cnts = 1 then
+            '三级UGC'
+           when ugc_cnts = 0 then
+            '四级UGC'
+         end as ugc_cnts,
+         case
+           when read_cnts >= 1 and read_cnts <= 50 then
+            '1~50次'
+           when read_cnts > 50 and read_cnts <= 100 then
+            '50~100次'
+           when read_cnts > 100 and read_cnts <= 200 then
+            '100~200次'
+           when read_cnts > 200 and read_cnts <= 300 then
+            '200~300次'
+           when read_cnts > 300 and read_cnts <= 400 then
+            '300~400次'
+           when read_cnts > 400 and read_cnts <= 500 then
+            '400~500次'
+           when read_cnts > 500 then
+            '大于500次'
+           when read_cnts = 0 then
+            '0次'
+         end as read_cnts,
+         case
+           when collect_cnts >= 1 and collect_cnts <= 50 then
+            '1~50次'
+           when collect_cnts > 50 and collect_cnts <= 100 then
+            '50~100次'
+           when collect_cnts > 100 and collect_cnts <= 200 then
+            '100~200次'
+           when collect_cnts > 200 and collect_cnts <= 300 then
+            '200~300次'
+           when collect_cnts > 300 and collect_cnts <= 400 then
+            '300~400次'
+           when collect_cnts > 400 and collect_cnts <= 500 then
+            '400~500次'
+           when collect_cnts > 500 then
+            '大于500次'
+           when collect_cnts = 0 then
+            '0次'
+         end as collect_cnts,
+         op_time,
+         user_source,
+         belong_province,
+         belong_city,
+         case
+           when total_ugc_cnts = 0 then
+            '四级UGC'
+           when total_ugc_cnts = 1 then
+            '三级UGC'
+           when total_ugc_cnts >= 2 and total_ugc_cnts <= 3 then
+            '二级UGC'
+           when total_ugc_cnts >= 4 then
+            '一级UGC'
+         end as total_ugc_cnts
+    from (select t.id,
+                 nvl(year(current_date) - year(t.user_birth), 999) as age, --用户年龄
+                 case
+                   when t.sex = 1 then
+                    '男'
+                   when t.sex = 2 then
+                    '女'
+                   else
+                    '未知'
+                 end as sex, --性别
+                 province.org_name as province, --省
+                 city.org_name as city, --城市
+                 nvl(t9.review_cnts, 0) as review_cnts, --留言次数
+                 nvl(t1.travel_cnts, 0) as travel_cnts, --发布游记数量
+                 nvl(t2.strategy_cnts, 0) as strategy_cnts, --发布攻略数量
+                 nvl(t3.thumb_up_cnts, 0) as thumb_up_cnts, --点赞数量
+                 nvl(t4.concern_cnts, 0) as concern_cnts, --被关注数量
+                 nvl(t1.good_travel_cnts, 0) as good_travel_cnts, --加精游记数
+                 nvl(t5.shoot_cnts, 0) as shoot_cnts, --发布拍拍数量
+                 nvl(t6.question_cnts, 0) as question_cnts, --发布问答次数
+                 nvl(t7.answers_cnts, 0) as answers_cnts, --回复问答数量
+                 nvl(t8.ugc_cnts, 0) as ugc_cnts, --发布UGC数量
+                 nvl(t1.travel_read_cnts, 0) + nvl(t2.strategy_read_cnts, 0) +
+                 nvl(t5.shoot_read_cnts, 0) + nvl(t6.question_read_cnts, 0) as read_cnts, --被阅读量
+                 nvl(t1.travel_collect_cnts, 0) +
+                 nvl(t2.strategy_collect_count, 0) as collect_cnts, --被收藏量
+                 from_unixtime(unix_timestamp(), 'yyyy-MM-dd HH:mm:ss') as op_time, --操作时间
+                 t.user_source, --会员来源渠道
+                 t10.belong_province as belong_province, --手机号归属省份
+                 t10.belong_city as belong_city, --手机号归属城市
+                 nvl(t11.total_ugc_cnts, 0) as total_ugc_cnts ---累计发布UGC数量
+            from tag_source_data.rv2go_rv_web_user t
+            left join (select count(distinct notes_id) as travel_cnts,
+                             count(distinct case
+                                     when rating_label = '669' then --加精游记数
+                                      notes_id
+                                   end) as good_travel_cnts,
+                             sum(hits) as travel_read_cnts, --游记阅读
+                             sum(collect_count) as travel_collect_cnts, --游记收藏
+                             user_uuid
+                        from tag_source_data.rv2go_rv_travel_notes
+                       where notes_status in (81111005, 81111006, 81111008)
+                       group by user_uuid) t1 on t.user_uuid = t1.user_uuid
+            left join (select count(distinct strategy_id) as strategy_cnts,
+                             sum(hits) as strategy_read_cnts, --攻略阅读
+                             sum(collect_count) as strategy_collect_count, --攻略收藏
+                             user_uuid
+                        from tag_source_data.rv2go_rv_strategy
+                       where strategy_status in (81114101, 81114102)
+                       group by user_uuid) t2 on t.user_uuid = t2.user_uuid
+            left join (select org_id, org_name
+                        from tag_source_data.rv2go_rv_organization
+                       where org_level = 3) province on t.living_place_province_org_id =
+                                                        province.org_id
+            left join (select org_id, org_name
+                        from tag_source_data.rv2go_rv_organization
+                       where org_level = 4) city on t.living_place_city_org_id =
+                                                    city.org_id
+            left join (select count(1) as thumb_up_cnts, user_id
+                        from tag_source_data.rv2go_rv_thumb_up
+                       where status = 1
+                       group by user_id) t3 on t.id = t3.user_id
+            left join (select count(distinct child_concern_user_id) as concern_cnts,
+                             parent_concern_user_id
+                        from tag_source_data.rv2go_rv_concerns
+                       where concern_status = 1
+                       group by parent_concern_user_id) t4 on t.id =
+                                                              t4.parent_concern_user_id
+            left join (select count(distinct shoot_code) as shoot_cnts,
+                             sum(hits) as shoot_read_cnts, --拍拍阅读
+                             web_user_id
+                        from tag_source_data.rv2go_rv_shoot
+                       where is_enable = 1
+                       group by web_user_id) t5 on t.id = t5.web_user_id
+            left join (select count(distinct code) as question_cnts,
+                             sum(hits) as question_read_cnts, --问答阅读
+                             user_uuid
+                        from tag_source_data.rv2go_rv_question
+                       where is_enable = 1
+                       group by user_uuid) t6 on t.user_uuid = t6.user_uuid
+            left join (select count(distinct code) as answers_cnts, user_uuid
+                        from tag_source_data.rv2go_rv_answers
+                       where is_enable = 1
+                       group by user_uuid) t7 on t.user_uuid = t7.user_uuid
+            left join (select count(distinct code) as ugc_cnts, user_uuid
+                        from (select code, user_uuid
+                                from tag_source_data.rv2go_rv_question
+                               where substr(create_date, 1, 7) =
+                                     substr(current_date, 1, 7)
+                                 and is_enable = 1
+                              union all
+                              select shoot_code as code, user_uuid
+                                from tag_source_data.rv2go_rv_shoot
+                               where substr(create_date, 1, 7) =
+                                     substr(current_date, 1, 7)
+                                 and is_enable = 1) s
+                       group by user_uuid) t8 on t.user_uuid = t8.user_uuid
+            left join (select count(distinct review_code) as review_cnts,
+                             user_id
+                        from tag_source_data.rv2go_rv_reviews
+                       where is_enable = 1
+                         and parent_review_code = 'null'
+                       group by user_id) t9 on t.id = t9.user_id
+            left join tag_source_data.dim_mobile_belong_area t10 on substr(t.mobile,1,7) =t10.mobile
+            left join (select count(distinct code) as total_ugc_cnts,
+                             user_uuid
+                        from (select code, user_uuid
+                                from tag_source_data.rv2go_rv_question
+                               where is_enable = 1
+                              union all
+                              select shoot_code as code, user_uuid
+                                from tag_source_data.rv2go_rv_shoot
+                               where is_enable = 1) s
+                       group by user_uuid) t11 on t.user_uuid=t11.user_uuid
+           where t.last_login_source in (86010001, 86010002)) tt;
+ 
+ 
+ 
+--------------------------------------------------------------------------------------------------------------------
+set comment='房车新增用户数据';
+create or replace temporary view rv_web_user_incre_detail_view as 
+select a.id, --手机号
+       nvl(b.data_name, '未知') as user_source,
+       to_date(a.create_date) as create_date, --创建日期
+       concat(year(a.create_date), weekofyear(a.create_date)) as week_of_year, --创建周
+       concat(year(a.create_date), month(a.create_date)) as month_of_year, --创建月份
+       date_sub(current_date(), 1) as yesterday, --当前时间前一天
+       concat(year(date_sub(current_date(), 7)), weekofyear(date_sub(current_date(), 7))) as last_week_of_year, ---当前时间的上一周
+       concat(year(add_months(current_date(), -1)), month(add_months(current_date(), -1))) as last_month_of_year --当前时间的上一月
+  from tag_source_data.rv2go_rv_web_user a
+  left join tag_source_data.rv2go_rv_master_data b on a.user_source =
+                                                 b.data_code;
+
+---上月分渠道新增用户
+insert overwrite table tag_source_data.rv_web_user_incre_last_month  
+select id as web_user_id, user_source, current_timestamp as op_time
+  from rv_web_user_incre_detail_view
+ where last_month_of_year = month_of_year;
+ 
+---上周分渠道新增用户
+insert overwrite table tag_source_data.rv_web_user_incre_last_week  
+select id as web_user_id, user_source, current_timestamp as op_time
+  from rv_web_user_incre_detail_view
+ where week_of_year = last_week_of_year;
+ 
+---昨日分渠道新增用户
+insert overwrite table tag_source_data.rv_web_user_incre_yesterday  
+select id as web_user_id, user_source, current_timestamp as op_time
+  from rv_web_user_incre_detail_view
+ where create_date = yesterday;
+
+---昨日分渠道新增用户
+insert overwrite table tag_source_data.rv_web_user_incre_total  
+select id as web_user_id, user_source, current_timestamp as op_time
+  from rv_web_user_incre_detail_view
+
+ 
+--------------------------------------------------------------------------------------------------------------------
+set comment='新增房车非APP注册用户基本信息标签';
+ 
+insert overwrite table tag_source_data.tag_rv_other_user_info
+select t.id,
+       case
+         when nvl(year(current_date) - year(t.user_birth), 999) < 18 then
+          '18岁以下'
+         when nvl(year(current_date) - year(t.user_birth), 999) >= 18 and
+              nvl(year(current_date) - year(t.user_birth), 999) <= 30 then
+          '18~30岁'
+         when nvl(year(current_date) - year(t.user_birth), 999) >= 31 and
+              nvl(year(current_date) - year(t.user_birth), 999) <= 40 then
+          '31~40岁'
+         when nvl(year(current_date) - year(t.user_birth), 999) >= 41 and
+              nvl(year(current_date) - year(t.user_birth), 999) <= 50 then
+          '41~50岁'
+         when nvl(year(current_date) - year(t.user_birth), 999) >= 51 and
+              nvl(year(current_date) - year(t.user_birth), 999) <= 60 then
+          '51~60岁'
+         when nvl(year(current_date) - year(t.user_birth), 999) > 60 and
+              nvl(year(current_date) - year(t.user_birth), 999) < 999 then
+          '大于60岁'
+         when nvl(year(current_date) - year(t.user_birth), 999) = 999 then
+          '未知年龄'
+       end as age, --用户年龄
+       case
+         when t.sex = 1 then
+          '男'
+         when t.sex = 2 then
+          '女'
+         else
+          '未知'
+       end as sex, --性别
+       nvl(province.org_name, '未知') as province, --省
+       nvl(city.org_name, '未知') as city, --城市
+       t.user_source, --会员来源渠道
+       nvl(t10.belong_province, '未知') as belong_province, --手机号归属省份
+       nvl(t10.belong_city, '未知') as belong_city, --手机号归属城市 
+       current_timestamp as op_time --操作时间     
+  from tag_source_data.rv2go_rv_web_user t
+  left join (select org_id, org_name
+               from tag_source_data.rv2go_rv_organization
+              where org_level = 3) province on t.living_place_province_org_id =
+                                               province.org_id
+  left join (select org_id, org_name
+               from tag_source_data.rv2go_rv_organization
+              where org_level = 4) city on t.living_place_city_org_id =
+                                           city.org_id
+  left join tag_source_data.dim_mobile_belong_area t10 on substr(t.mobile, 1, 7)=t10.mobile
+ where t.last_login_source not in (86010001, 86010002);
+ 
+
+------------------------------------------------------------------------------------------------
+set comment='新增房车APP登录用户分类标签';
+
+insert overwrite table tag_source_data.tag_rv_app_event_user
+select mobile,
+       case
+         when event_user_type = '出行用户' then
+          user_value
+       end as travle_user_value,
+       case
+         when event_user_type = '国内租车用户' then
+          user_value
+       end as nationalrent_user_value,
+       case
+         when event_user_type = '国际租车用户' then
+          user_value
+       end as internationalrent_user_value,
+       case
+         when event_user_type = '营地用户' then
+          user_value
+       end as camp_user_value,
+       current_timestamp as op_time --操作时间
+  from (select user_mobile as mobile, user_value, event_user_type
+          from (select mobile,
+                       '' as device_id,
+                       event_user_type,
+                       case
+                         when max_date > date_sub(current_date, 7) then
+                          '近7天'
+                       end as week_active_user,
+                       '近30天' as month_active_user,
+                       case
+                         when two_weeks_click_cnts >= 3 then
+                          '2周内点击次数大于3天次 '
+                       end as two_weeks_click_fre
+                  from (select case
+                                 when event_id =
+                                      'SaicRV_APP_Rent_NationalRent_Product_Click' then
+                                  '国内租车用户'
+                                 when event_id =
+                                      'SaicRV_APP_Rent_InternationalRent_BookingCar_Click' then
+                                  '国际租车用户'
+                                 when event_id =
+                                      'SaicRV_APP_Campsite_MainPage_Product_Click' then
+                                  '营地用户'
+                                 when event_id in
+                                      ('SaicRV_APP_Travel_MainPage_Banner_Click',
+                                       'SaicRV_APP_Travel_HotTravel_Click',
+                                       'SaicRV_APP_Travel_SelectedProduct_Click') then
+                                  '出行用户'
+                               end as event_user_type,
+                               mobile,
+                               max(substr(time, 1, 10)) as max_date,
+                               count(distinct case
+                                       when substr(time, 1, 10) >=
+                                            date_sub(current_date, 15) then
+                                        substr(time, 1, 10)
+                                       else
+                                        NULL
+                                     end) as two_weeks_click_cnts
+                          from dataassets.pla_p_fangche_ac
+                         where event_id in
+                               ('SaicRV_APP_Rent_NationalRent_Product_Click',
+                                'SaicRV_APP_Rent_InternationalRent_BookingCar_Click',
+                                'SaicRV_APP_Campsite_MainPage_Product_Click',
+                                'SaicRV_APP_Travel_MainPage_Banner_Click',
+                                'SaicRV_APP_Travel_HotTravel_Click',
+                                'SaicRV_APP_Travel_SelectedProduct_Click')
+                           and substr(time, 1, 10) >=
+                               date_sub(current_date, 30)
+                         group by case
+                                    when event_id =
+                                         'SaicRV_APP_Rent_NationalRent_Product_Click' then
+                                     '国内租车用户'
+                                    when event_id =
+                                         'SaicRV_APP_Rent_InternationalRent_BookingCar_Click' then
+                                     '国际租车用户'
+                                    when event_id =
+                                         'SaicRV_APP_Campsite_MainPage_Product_Click' then
+                                     '营地用户'
+                                    when event_id in
+                                         ('SaicRV_APP_Travel_MainPage_Banner_Click',
+                                          'SaicRV_APP_Travel_HotTravel_Click',
+                                          'SaicRV_APP_Travel_SelectedProduct_Click') then
+                                     '出行用户'
+                                  end,
+                                  mobile) tt) ss lateral view explode(map(mobile, week_active_user, mobile, month_active_user, mobile, two_weeks_click_fre)) tt as user_mobile,
+               user_value) ee;
