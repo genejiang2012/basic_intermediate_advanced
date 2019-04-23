@@ -1,0 +1,14 @@
+tag_source_data.rv2go_rv_reviews
+tag_source_data.rv2go_rv_answers
+dataassets.pla_p_fangche_ac
+tag_source_data.rv2go_rv_concerns
+tag_source_data.rv2go_rv_web_user
+tag_source_data.rv2go_rv_web_login_log
+tag_source_data.rv2go_rv_thumb_up
+tag_source_data.rv2go_rv_travel_notes
+tag_source_data.rv2go_rv_organization
+default.rv_app_page_event_detail
+tag_source_data.rv2go_rv_shoot
+tag_source_data.rv2go_rv_strategy
+analytics.effective_session_event_detail
+tag_source_data.rv2go_rv_question
