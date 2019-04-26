@@ -3,18 +3,19 @@
 
 
 class B:
-    x=1
+    x = 1
 
     @classmethod
     def test(cls):
         print(cls, cls.x)
+
 
 B.test()
 
 
 class A(object):
     bar = 1
-    
+
     def func1(self):
         print('foo')
 
@@ -24,7 +25,9 @@ class A(object):
         print(cls.bar)
         cls().func1()
 
+
 A.func2()
+
 
 class Demo(object):
     @classmethod
@@ -43,5 +46,3 @@ print(Demo.statmeth('Spam'))
 print(Demo.statmeth())
 
 print(Demo.statmeth('Spam'))
-
-

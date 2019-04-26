@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 """
 File: brother_ma_001_oop_example.py
 Author: Gene Jiang
@@ -12,7 +10,7 @@ Description: excersie the oop for python
 
 class MyKlass(object):
     """A example class"""
-    x = 'abc'   # 类的属性
+    x = 'abc'  # 类的属性
 
     def __init__(self):
         print('self in init={}'.format(id(self)))
@@ -28,7 +26,7 @@ class MyKlass(object):
 a = MyKlass()
 print('a={}'.format(id(a)))
 
-print("~"*10)
+print("~" * 10)
 
 
 class MyClass(object):
@@ -106,9 +104,8 @@ jerry_2 = PersonNew('Jerry', 20)
 PersonNew.age = 30
 print(PersonNew.age, tom_2.age, jerry_2.age)
 
-tom_2.name ='TOM father'
+tom_2.name = 'TOM father'
 print(tom_2.name)
-
 
 print(PersonNew.height, tom_2.height, jerry_2.height)
 jerry_2.height = 175
@@ -125,4 +122,43 @@ print(tom_2.weight)
 print(tom_2.__dict__['height'])
 
 
+class MyClass:
+    """A example of class"""
+    x = 'abc'
 
+    def __init__(self):
+        print("self in init={}".format(id(self)))
+
+    def foo(self):
+        return 'my class'
+
+
+class Person(object):
+    """Docstring for Person. """
+    age = 3
+
+    def __init__(self, name, age):
+        self.name = name
+        # self.age = age
+
+    def showage(self):
+        print("{} is {}".format(self.name, self.age))
+
+
+print(MyClass)
+print(MyClass())
+print("=" * 10)
+print(MyClass().__doc__)
+print("=" * 10)
+
+Tom = Person('Tom', 22)
+Jerry = Person('Jerry', 31)
+print(Tom.name, Jerry.age)
+Jerry.age += 1
+print(Jerry.age)
+Jerry.showage()
+
+print("=" * 10)
+
+c = MyClass()
+print('c = {}'.format(id(c)))

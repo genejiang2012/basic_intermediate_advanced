@@ -9,8 +9,9 @@ import datetime
 import urllib3
 import hashlib
 from multiprocessing import Pool
-reload(sys) # Python2.5 初始化后会删除 sys.setdefaultencoding 这个方法，我们需要重新载入
-sys.setdefaultencoding('utf-8')
+# reload(sys) # Python2.5 初始化后会删除 sys.setdefaultencoding 这个方法，我们需要重新载入
+# sys.setdefaultencoding('utf-8')
+
 
 browsers = ['Chrome','FireFox','Internet Explorer','BaiDu','Other','Opera','Safari','SouGou','UC',' Microsoft Edge','QQ']
 genders = ['男','女','未知']
