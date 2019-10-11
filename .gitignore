@@ -1,0 +1,11 @@
+# ignore vscode config
+.vscode/
+.idea/
+.git/
+
+
+# ignore the files
+*.zip
+*.png
+
+
