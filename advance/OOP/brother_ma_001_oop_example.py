@@ -9,7 +9,7 @@ Description: excersie the oop for python
 
 
 class MyKlass(object):
-    """A example class"""
+    """A example_01 class"""
     x = 'abc'  # 类的属性
 
     def __init__(self):
@@ -123,7 +123,7 @@ print(tom_2.__dict__['height'])
 
 
 class MyClass:
-    """A example of class"""
+    """A example_01 of class"""
     x = 'abc'
 
     def __init__(self):

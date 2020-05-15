@@ -6,7 +6,7 @@ File: high_order_func_example01.py
 Author: Gene Jiang
 Email: genejiang2012@outlook.com
 Github: https://github.com/genejiang2012
-Description: some example for high order function
+Description: some example_01 for high order function
 """
 
 

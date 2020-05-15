@@ -6,7 +6,7 @@ File: example_02_decorator.py
 Author: Gene Jiang
 Email: genejiang2012@outlook.com
 Github: https://github.com/genejiang2012
-Description: the example for decorator
+Description: the example_01 for decorator
 """
 
 import time
@@ -93,7 +93,7 @@ def add(x, y):
     return x + y
 
 
-@logged(logging.WARNING, 'example')
+@logged(logging.WARNING, 'example_01')
 def spam():
     print('Spam!')
 
