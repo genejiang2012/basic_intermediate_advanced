@@ -3,6 +3,8 @@ import csv
 import sys
 
 from docx import *
+from docx import shared
+from docx.oxml.shared import OxmlElement, qn
 
 
 class DataCSV:
@@ -27,6 +29,9 @@ class DataCSV:
 class MyDoc:
     def __init__(self):
         self.document = Document()  # use the Document class from docx
+        self.set_doc_style()
+
+    def set_doc_style(self):
         style = self.document.styles['Normal']
         font = style.font
         font.name = "等线"
@@ -37,6 +42,13 @@ class MyDoc:
         p.add_run().bold = True
 
     def create_table(self, header, records):
+        def shade_cells(cells, shade):
+            for cell in cells:
+                tcPr = cell._tc.get_or_add_tcPr()
+                tcVAlign = OxmlElement("w:shd")
+                tcVAlign.set(qn("w:fill"), shade)
+                tcPr.append(tcVAlign)
+
         table = self.document.add_table(rows=2, cols=5)
         table.style = 'TableGrid'
 
@@ -44,44 +56,18 @@ class MyDoc:
         first_row = table.rows[0]
         first_row.cells[0].merge(first_row.cells[-1])
         first_row.cells[0].paragraphs[0].add_run('Objective1: ').bold = True
+        shade_cells([first_row.cells[0]], '#A4D39F')
 
         # create the header
         hdr_cells = table.rows[1].cells
-        hdr_cells[0].paragraphs[0].add_run(header[0]).bold = True
-        hdr_cells[1].paragraphs[0].add_run(header[1]).bold = True
-        hdr_cells[2].paragraphs[0].add_run(header[2]).bold = True
-        hdr_cells[3].paragraphs[0].add_run(header[3]).bold = True
-        hdr_cells[4].paragraphs[0].add_run(header[4]).bold = True
+        for i in range(len(hdr_cells)):
+            hdr_cells[i].paragraphs[0].add_run(header[i]).bold = True
+            shade_cells([hdr_cells[i]], '#E0E0E0')
 
         # fill the data to table
         row_cells = table.add_row().cells
-        row_cells[0].text = records[0]
-        row_cells[1].text = records[1]
-        row_cells[2].text = records[2]
-        row_cells[3].text = records[3]
-        row_cells[4].text = records[4]
-
-    def create_header(self, header):
-        table = self.document.add_table(rows=1, cols=5)
-
-        # create the header
-        hdr_cells = table.rows[0].cells
-        hdr_cells[0].text = header[0]
-        hdr_cells[1].text = header[1]
-        hdr_cells[2].text = header[2]
-        hdr_cells[3].text = header[3]
-        hdr_cells[4].text = header[4]
-
-    def create_records(self, records):
-        table = self.document.add_table(rows=1, cols=5)
-
-        for desc, con, expect_result, actual_result, comments in records:
-            row_cells = table.add_row().cells
-            row_cells[0].text = desc
-            row_cells[1].text = con
-            row_cells[2].text = expect_result
-            row_cells[3].text = actual_result
-            row_cells[4].text = comments
+        for index in range(len(row_cells)):
+            row_cells[index].text = records[index]
 
     def save_doc(self, doc_name):
         if doc_name.split('.')[-1] == 'docx':
@@ -94,29 +80,30 @@ def parse_argument(argv):
     parser = argparse.ArgumentParser()
     parser.add_argument('--csv file', type=str,
                         help='please specify file exported from Zentao')
-    parser.add_argument('--docx file', type=str, help= ' please specify the docx name')
+    parser.add_argument('--docx file', type=str,
+                        help=' please specify the docx name')
     return parser.parse_args(argv)
 
 
 if __name__ == "__main__":
     csv_name = sys.argv[1]
     doc_name = sys.argv[2]
+
+    # deal with the csv file
     my_csv = DataCSV(csv_name)
     steps_result = my_csv.operate_file()
 
     one_record = []
-
     for item in steps_result:
         one_record.append([item['steps'], ' ', item['expect'], 'Pass', ' '])
 
-    #     print(one_record)
+    # export data to my doc
     my_doc = MyDoc()
     header = (
         'Description/Action', 'Specific Data/ Condition(s)', 'Expected Result',
-        "Actual Result Pass/Fail", 'Comments')
+        "Pass/Fail", 'Comments')
 
     for item in one_record:
-        #         print(item)
         my_doc.add_paragraph('Test Case')
         my_doc.create_table(header, item)
 
