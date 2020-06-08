@@ -21,7 +21,8 @@ class DataCSV:
 
             for row in file_csv:
                 steps_result_list.append(
-                    {'steps': row['步骤'], 'expect': row['预期']})
+                    {'title': row["用例标题"], 'steps': row['步骤'],
+                     'expect': row['预期']})
 
         return steps_result_list
 
@@ -37,8 +38,8 @@ class MyDoc:
         font.name = "等线"
         font.size = shared.Pt(10)
 
-    def add_paragraph(self, content):
-        p = self.document.add_paragraph(content)
+    def add_local_heading(self, content, level=3):
+        p = self.document.add_heading(content, level)
         p.add_run().bold = True
 
     def create_table(self, header, records):
@@ -55,7 +56,8 @@ class MyDoc:
         # merge the first row
         first_row = table.rows[0]
         first_row.cells[0].merge(first_row.cells[-1])
-        first_row.cells[0].paragraphs[0].add_run('Objective1: ').bold = True
+        first_row.cells[0].paragraphs[0].add_run(
+            'Objective1: '+ records[-1]).bold = True
         shade_cells([first_row.cells[0]], '#A4D39F')
 
         # create the header
@@ -92,19 +94,24 @@ if __name__ == "__main__":
     # deal with the csv file
     my_csv = DataCSV(csv_name)
     steps_result = my_csv.operate_file()
+    # print(steps_result)
 
     one_record = []
     for item in steps_result:
-        one_record.append([item['steps'], ' ', item['expect'], 'Pass', ' '])
+        one_record.append(
+            [item['steps'], ' ', item['expect'], 'Pass', ' ', item['title']])
 
+    # print(one_record)
     # export data to my doc
     my_doc = MyDoc()
     header = (
-        'Description/Action', 'Specific Data/ Condition(s)', 'Expected Result',
+        'Description/Action', 'Specific Data/ Condition(s)',
+        'Expected Result',
         "Pass/Fail", 'Comments')
 
-    for item in one_record:
-        my_doc.add_paragraph('Test Case')
+    for index, item in enumerate(one_record):
+        my_doc.add_local_heading(
+            "Test Case {}:{}".format(str(index + 1), item[-1]))
         my_doc.create_table(header, item)
 
     my_doc.save_doc(doc_name)
