@@ -4,8 +4,11 @@
 .git/
 
 
+
 # ignore the files
 *.zip
 *.png
+*.csv
+*.docx
 
 
