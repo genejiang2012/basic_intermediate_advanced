@@ -4,7 +4,7 @@
 """
 File: mylog.py
 Author: Gene Jiang
-Email: zhengrong.jiang@chiefclouds.com
+Email: genejiang2012@outlook.com
 Github: https://github.com/yourname
 Description: 
 """

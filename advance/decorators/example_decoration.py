@@ -4,7 +4,7 @@
 """
 File: example_decoration.py
 Author: Gene Jiang
-Email: zhengrong.jiang@chiefclouds.com
+Email: genejiang2012@outlook.com
 Github: https://github.com/yourname
 Description: Chapter 9 from <<The Hacker's Guide to Python>>
 """
