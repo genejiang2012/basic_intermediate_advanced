@@ -1,0 +1,670 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+A	.\advance\OOP\brother_ma_010_inherit_initialize.py	/^class A:$/;"	c
+A	.\advance\OOP\example_classmethod.py	/^class A(object):$/;"	c
+A	.\intermediate\plugin_dev\plug\plugin.py	/^class A:$/;"	c
+Animal	.\advance\OOP\brother_ma_007_inheritance.py	/^class Animal(object):$/;"	c
+Animal	.\advance\OOP\brother_ma_008_inheritance_control.py	/^class Animal(object):$/;"	c
+Animal	.\advance\OOP\brother_ma_009_override.py	/^class Animal:$/;"	c
+Averager	.\advance\decorators\FP_closure.py	/^class Averager(object):$/;"	c
+B	.\advance\OOP\brother_ma_010_inherit_initialize.py	/^class B(A):$/;"	c
+B	.\advance\OOP\example_classmethod.py	/^class B:$/;"	c
+B	.\advance\OOP\what_is_super.py	/^class B(Root):$/;"	c
+BASE_DIR	.\advance\bigdata\mock_big_data.py	/^BASE_DIR = os.path.dirname(os.path.dirname(__file__))$/;"	v
+BASE_DIR	.\advance\bigdata\test.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))$/;"	v
+C	.\advance\OOP\what_is_super.py	/^class C(Root):$/;"	c
+Car	.\advance\OOP\brother_ma_006_homework_1.py	/^class Car(object):$/;"	c
+CarInfo	.\advance\OOP\brother_ma_006_homework_1.py	/^class CarInfo(object):$/;"	c
+Cat	.\advance\OOP\brother_ma_007_inheritance.py	/^class Cat(Animal):$/;"	c
+Cat	.\advance\OOP\brother_ma_008_inheritance_control.py	/^class Cat(Animal):$/;"	c
+Cat	.\advance\OOP\brother_ma_009_override.py	/^class Cat(Animal):$/;"	c
+D	.\advance\OOP\what_is_super.py	/^class D(B, C):$/;"	c
+DC_PATH	.\advance\bigdata\mock_big_data.py	/^DC_PATH = BASE_DIR + "\/bigdata\/districtcode.txt"$/;"	v
+DC_PATH	.\advance\bigdata\test.py	/^DC_PATH = BASE_DIR + "\/advance\/bigdata\/districtcode.txt"$/;"	v
+DLinkedList	.\alog\List\DoublyLinkList_example.py	/^class DLinkedList:$/;"	c
+DataCSV	.\3rd_lib\csv2docx\csv2docx.py	/^class DataCSV:$/;"	c
+Demo	.\advance\OOP\FP_classmethod_staticmethod.py	/^class Demo(object):$/;"	c
+Demo	.\advance\OOP\example_classmethod.py	/^class Demo(object):$/;"	c
+DlistNode	.\alog\List\DoublyLinkList_example.py	/^class DlistNode(object):$/;"	c
+Dog	.\advance\OOP\brother_ma_007_inheritance.py	/^class Dog(Animal):$/;"	c
+Factory	.\3rd_lib\faker_lib.py	/^from faker import Faker, Factory$/;"	i
+Factory	.\advance\bigdata\mock_data_order.py	/^from faker import Faker, Factory$/;"	i
+Factory	.\advance\bigdata\mock_data_profile_multi.py	/^from faker import Faker,Factory$/;"	i
+Factory	.\advance\bigdata\mock_data_tracking_multi.py	/^from faker import Faker,Factory$/;"	i
+Faker	.\3rd_lib\faker_lib.py	/^from faker import Faker, Factory$/;"	i
+Faker	.\advance\bigdata\mock_data_order.py	/^from faker import Faker, Factory$/;"	i
+Faker	.\advance\bigdata\mock_data_profile_multi.py	/^from faker import Faker,Factory$/;"	i
+Faker	.\advance\bigdata\mock_data_tracking_multi.py	/^from faker import Faker,Factory$/;"	i
+Faker	.\advance\lib\faker\faker_example.py	/^from faker import Faker$/;"	i
+Flask	.\spider\web\flask\hello_flask.py	/^from flask import Flask$/;"	i
+Garfied	.\advance\OOP\brother_ma_007_inheritance.py	/^class Garfied(Cat):$/;"	c
+HEIGHT	.\advance\OOP\brother_ma_008_inheritance_control.py	/^    HEIGHT = 0$/;"	v	class:Animal
+HotDog	.\basic\class_concept\hotdog.py	/^class HotDog:$/;"	c
+Jerry	.\advance\OOP\brother_ma_001_oop_example.py	/^Jerry = Person('Jerry', 31)$/;"	v
+LinkedList	.\alog\List\ListNode_example.py	/^class LinkedList(object):$/;"	c
+LinkedList	.\alog\List\ListNode_example2.py	/^class LinkedList(object):$/;"	c
+ListNode	.\alog\List\ListNode_example.py	/^class ListNode(object):$/;"	c
+ListNode	.\alog\leetcode\add_two_numbs.py	/^class ListNode:$/;"	c
+MyClass	.\advance\OOP\brother_ma_001_oop_example.py	/^class MyClass(object):$/;"	c
+MyClass	.\advance\OOP\brother_ma_001_oop_example.py	/^class MyClass:$/;"	c
+MyContext	.\advance\context\mycontext.py	/^class MyContext(object):$/;"	c
+MyDoc	.\3rd_lib\csv2docx\csv2docx.py	/^class MyDoc:$/;"	c
+MyKlass	.\advance\OOP\brother_ma_001_oop_example.py	/^class MyKlass(object):$/;"	c
+MyModule	.\test_framework\my_pytest\my_module\my_func.py	/^class MyModule:$/;"	c
+MySQLDb	.\advance\mysql\mock_insight_from_mysql.py	/^class MySQLDb(object):$/;"	c
+NAME	.\advance\OOP\brother_ma_008_inheritance_control.py	/^    NAME = 'CAT'$/;"	v	class:Cat
+Node	.\alog\List\unorderedlinkedlist.py	/^class Node:$/;"	c
+OxmlElement	.\3rd_lib\csv2docx\csv2docx.py	/^from docx.oxml.shared import OxmlElement, qn$/;"	i
+ParseConfigIni	.\advance\mysql\mock_insight_from_mysql.py	/^class ParseConfigIni():$/;"	c
+Person	.\advance\OOP\brother_ma_001_oop_example.py	/^class Person(object):$/;"	c
+Person	.\advance\OOP\brother_ma_002_oop_example.py	/^class Person(object):$/;"	c
+Person	.\advance\OOP\brother_ma_003_oop_access.py	/^class Person(object):$/;"	c
+Person	.\advance\OOP\brother_ma_004_oop_property.py	/^class Person(object):$/;"	c
+Person	.\advance\OOP\brother_ma_005_propertydecorator.py	/^class Person:$/;"	c
+Person	.\advance\OOP\test1.py	/^class Person:$/;"	c
+PersonExample	.\advance\OOP\brother_ma_001_oop_example.py	/^class PersonExample(object):$/;"	c
+PersonNew	.\advance\OOP\brother_ma_001_oop_example.py	/^class PersonNew(object):$/;"	c
+Person_first	.\advance\OOP\brother_ma_003_oop_access.py	/^    Person_first = Person('Tom')$/;"	v	class:Person
+Point	.\advance\OOP\brother_ma_006_homework_1.py	/^class Point(object):$/;"	c
+Pool	.\advance\bigdata\mock_data_profile_multi.py	/^from multiprocessing import Pool$/;"	i
+Pool	.\advance\bigdata\mock_data_tracking_multi.py	/^from multiprocessing import Pool$/;"	i
+RECORD_COUNT	.\advance\lib\faker\faker_example.py	/^RECORD_COUNT = 1000$/;"	v
+RandomGen	.\advance\OOP\brother_ma_006_homework_1.py	/^class RandomGen:$/;"	c
+RandomToolGene	.\advance\OOP\brother_ma_006_homework_1.py	/^class RandomToolGene:$/;"	c
+RandomToolGenerator	.\advance\OOP\brother_ma_006_homework_1.py	/^class RandomToolGenerator:$/;"	c
+ReverseString	.\basic\DS\string_reverse.py	/^class ReverseString(object):$/;"	c
+Root	.\advance\OOP\what_is_super.py	/^class Root(object):$/;"	c
+SingleNode	.\alog\List\ListNode_example2.py	/^class SingleNode(object):$/;"	c
+Solution	.\advance\LeetCode\001_two_sum.py	/^class Solution:$/;"	c
+Solution	.\alog\leetcode\20_Valid_Parenthese.py	/^class Solution:$/;"	c
+Solution	.\alog\leetcode\add_two_numbs.py	/^class Solution(object):$/;"	c
+Solution	.\alog\leetcode\twosum.py	/^class Solution:$/;"	c
+Solution	.\basic\alog\twoSum.py	/^class Solution(object):$/;"	c
+SolutionSecond	.\alog\leetcode\twosum.py	/^class SolutionSecond:$/;"	c
+SolutionThird	.\alog\leetcode\twosum.py	/^class SolutionThird:$/;"	c
+Stack	.\alog\Stack\my_stack.py	/^class Stack:$/;"	c
+Stack	.\alog\leetcode\20_Valid_Parenthese.py	/^class Stack:$/;"	c
+Store	.\advance\decorators\example_01_decorator.py	/^class Store(object):$/;"	c
+Temperature	.\advance\OOP\brother_ma_006_homework_1.py	/^class Temperature:$/;"	c
+TestCase	.\test_framework\my_pytest\test\pytest_example.py	/^class TestCase:$/;"	c
+TestMathFunction	.\advance\unitest_example\unittest_test.py	/^class TestMathFunction(unittest.TestCase):$/;"	c
+Tom	.\advance\OOP\brother_ma_001_oop_example.py	/^Tom = Person('Tom', 22)$/;"	v
+UnorderedList	.\alog\List\unorderedlinkedlist.py	/^class UnorderedList:$/;"	c
+X	.\basic\module\example_01\xyz.py	/^X = 10/;"	v
+__COUNT	.\advance\OOP\brother_ma_008_inheritance_control.py	/^    __COUNT = 100$/;"	v	class:Animal
+__COUNT	.\advance\OOP\brother_ma_008_inheritance_control.py	/^    __COUNT = 200$/;"	v	class:Cat
+__all__	.\basic\module\example_02\m\__init__.py	/^__all__ = ['x', 'm1']$/;"	v
+__call__	.\advance\decorators\FP_closure.py	/^    def __call__(self, new_value):$/;"	m	class:Averager	file:
+__enter__	.\advance\context\mycontext.py	/^    def __enter__(self):$/;"	m	class:MyContext	file:
+__exit__	.\advance\context\mycontext.py	/^    def __exit__(self):$/;"	m	class:MyContext	file:
+__get_height	.\advance\OOP\brother_ma_003_oop_access.py	/^    def __get_height(self):$/;"	m	class:Person	file:
+__get_weight	.\advance\OOP\brother_ma_008_inheritance_control.py	/^    def __get_weight(self):$/;"	m	class:Animal	file:
+__init__	.\3rd_lib\csv2docx\csv2docx.py	/^    def __init__(self):$/;"	m	class:MyDoc
+__init__	.\3rd_lib\csv2docx\csv2docx.py	/^    def __init__(self, file):$/;"	m	class:DataCSV
+__init__	.\advance\OOP\brother_ma_001_oop_example.py	/^    def __init__(self):$/;"	m	class:MyClass
+__init__	.\advance\OOP\brother_ma_001_oop_example.py	/^    def __init__(self):$/;"	m	class:MyKlass
+__init__	.\advance\OOP\brother_ma_001_oop_example.py	/^    def __init__(self, name):$/;"	m	class:PersonExample
+__init__	.\advance\OOP\brother_ma_001_oop_example.py	/^    def __init__(self, name, age):$/;"	m	class:Person
+__init__	.\advance\OOP\brother_ma_001_oop_example.py	/^    def __init__(self, name, age=18):$/;"	m	class:PersonNew
+__init__	.\advance\OOP\brother_ma_003_oop_access.py	/^    def __init__(self, name, age=18, height=170):$/;"	m	class:Person
+__init__	.\advance\OOP\brother_ma_004_oop_property.py	/^    def __init__(self, name, age=18):$/;"	m	class:Person
+__init__	.\advance\OOP\brother_ma_005_propertydecorator.py	/^    def __init__(self, name, age=18):$/;"	m	class:Person
+__init__	.\advance\OOP\brother_ma_006_homework_1.py	/^    def __init__(self):$/;"	m	class:CarInfo
+__init__	.\advance\OOP\brother_ma_006_homework_1.py	/^    def __init__(self, mark, color, price, speed):$/;"	m	class:Car
+__init__	.\advance\OOP\brother_ma_006_homework_1.py	/^    def __init__(self, start=1, stop=10, count=10):$/;"	m	class:RandomToolGenerator
+__init__	.\advance\OOP\brother_ma_006_homework_1.py	/^    def __init__(self, start=1, stop=100, count=10):$/;"	m	class:RandomGen
+__init__	.\advance\OOP\brother_ma_006_homework_1.py	/^    def __init__(self, t, unit='c'):$/;"	m	class:Temperature
+__init__	.\advance\OOP\brother_ma_006_homework_1.py	/^    def __init__(self, x, y):$/;"	m	class:Point
+__init__	.\advance\OOP\brother_ma_007_inheritance.py	/^    def __init__(self, name):$/;"	m	class:Animal
+__init__	.\advance\OOP\brother_ma_007_inheritance.py	/^    def __init__(self, name):$/;"	m	class:Cat
+__init__	.\advance\OOP\brother_ma_008_inheritance_control.py	/^    def __init__(self, age, weight, height):$/;"	m	class:Animal
+__init__	.\advance\OOP\brother_ma_010_inherit_initialize.py	/^    def __init__(self, a, d=10):$/;"	m	class:A
+__init__	.\advance\OOP\brother_ma_010_inherit_initialize.py	/^    def __init__(self, b, c):$/;"	m	class:B
+__init__	.\advance\OOP\what_is_super.py	/^    def __init__(self):$/;"	m	class:B
+__init__	.\advance\OOP\what_is_super.py	/^    def __init__(self):$/;"	m	class:C
+__init__	.\advance\OOP\what_is_super.py	/^    def __init__(self):$/;"	m	class:Root
+__init__	.\advance\decorators\FP_closure.py	/^    def __init__(self):$/;"	m	class:Averager
+__init__	.\advance\mysql\mock_insight_from_mysql.py	/^    def __init__(self):$/;"	m	class:MySQLDb
+__init__	.\advance\mysql\mock_insight_from_mysql.py	/^    def __init__(self, config_file_path):$/;"	m	class:ParseConfigIni
+__init__	.\alog\List\DoublyLinkList_example.py	/^    def __init__(self):$/;"	m	class:DLinkedList
+__init__	.\alog\List\DoublyLinkList_example.py	/^    def __init__(self, data, prev=None, next=None):$/;"	m	class:DlistNode
+__init__	.\alog\List\ListNode_example.py	/^    def __init__(self):$/;"	m	class:LinkedList
+__init__	.\alog\List\ListNode_example.py	/^    def __init__(self, data, next=None):$/;"	m	class:ListNode
+__init__	.\alog\List\ListNode_example2.py	/^    def __init__(self):$/;"	m	class:LinkedList
+__init__	.\alog\List\ListNode_example2.py	/^    def __init__(self, data, next=None):$/;"	m	class:SingleNode
+__init__	.\alog\List\unorderedlinkedlist.py	/^    def __init__(self):$/;"	m	class:UnorderedList
+__init__	.\alog\List\unorderedlinkedlist.py	/^    def __init__(self, data, next=None):$/;"	m	class:Node
+__init__	.\alog\Stack\my_stack.py	/^    def __init__(self):$/;"	m	class:Stack
+__init__	.\alog\leetcode\20_Valid_Parenthese.py	/^    def __init__(self):$/;"	m	class:Stack
+__init__	.\alog\leetcode\add_two_numbs.py	/^    def __init__(self, x):$/;"	m	class:ListNode
+__init__	.\basic\DS\string_reverse.py	/^    def __init__(self, my_string):$/;"	m	class:ReverseString
+__init__	.\basic\class_concept\ball.py	/^    def __init__(self):$/;"	m	class:ball
+__init__	.\basic\class_concept\hotdog.py	/^    def __init__(self):  # 初始化属性$/;"	m	class:HotDog
+__repr__	.\advance\OOP\brother_ma_006_homework_1.py	/^    def __repr__(self):$/;"	m	class:Point	file:
+__repr__	.\alog\List\DoublyLinkList_example.py	/^    def __repr__(self):$/;"	m	class:DlistNode	file:
+__repr__	.\alog\List\ListNode_example.py	/^    def __repr__(self):$/;"	m	class:ListNode	file:
+__repr__	.\alog\List\ListNode_example2.py	/^    def __repr__(self):$/;"	m	class:SingleNode	file:
+__repr__	.\alog\List\unorderedlinkedlist.py	/^    def __repr__(self):$/;"	m	class:Node	file:
+__shout_count2	.\advance\OOP\brother_ma_008_inheritance_control.py	/^    def __shout_count2(cls):$/;"	m	class:Animal	file:
+_c_add	.\advance\decorators\sort_definition.py	/^    def _c_add(y):$/;"	f	function:c_add
+_copy	.\basic\function_concept\decorator_example.py	/^    def _copy(dst):$/;"	f	function:copy_properties
+_functions	.\advance\decorators\example_decoration.py	/^_functions = {}$/;"	v
+_generate	.\advance\OOP\brother_ma_006_homework_1.py	/^    def _generate(self):$/;"	m	class:RandomToolGenerator
+_get_name	.\advance\OOP\brother_ma_003_oop_access.py	/^    def _get_name(self):$/;"	m	class:Person
+a	.\advance\OOP\brother_ma_001_oop_example.py	/^a = MyClass()$/;"	v
+a	.\advance\OOP\brother_ma_001_oop_example.py	/^a = MyKlass()$/;"	v
+a	.\advance\OOP\brother_ma_009_override.py	/^a = Animal()$/;"	v
+a	.\alog\List\DoublyLinkList_example.py	/^    a = DlistNode('11')$/;"	v	class:DLinkedList
+a	.\alog\List\ListNode_example.py	/^    a = ListNode(11)$/;"	v	class:LinkedList
+about	.\spider\web\flask\hello_flask.py	/^def about():$/;"	f
+add	.\advance\decorators\example_02_decorator.py	/^def add(x, y):$/;"	f
+add	.\advance\decorators\sort_definition.py	/^def add(x,y):$/;"	f
+add	.\advance\unitest_example\myfunc.py	/^def add(a, b):$/;"	f
+add	.\alog\List\unorderedlinkedlist.py	/^    def add(self, item):$/;"	m	class:UnorderedList
+add	.\basic\function_concept\72_parameters.py	/^def add(*iter):$/;"	f
+add	.\basic\function_concept\decorator_example.py	/^def add(x, y):$/;"	f
+add1	.\basic\function_concept\decorator_example.py	/^def add1(x, y, z):$/;"	f
+add_car	.\advance\OOP\brother_ma_006_homework_1.py	/^    def add_car(self, car: Car):$/;"	m	class:CarInfo
+add_local_heading	.\3rd_lib\csv2docx\csv2docx.py	/^    def add_local_heading(self, content, level=3):$/;"	m	class:MyDoc
+add_two_numbers	.\alog\leetcode\add_two_numbs.py	/^    def add_two_numbers(self, l1, l2):$/;"	m	class:Solution
+age	.\advance\OOP\brother_ma_001_oop_example.py	/^    age = 3$/;"	v	class:Person
+age	.\advance\OOP\brother_ma_001_oop_example.py	/^    age = 3$/;"	v	class:PersonExample
+age	.\advance\OOP\brother_ma_001_oop_example.py	/^    age = 3$/;"	v	class:PersonNew
+age	.\advance\OOP\brother_ma_004_oop_property.py	/^    def age(self):$/;"	m	class:Person
+age	.\advance\OOP\brother_ma_004_oop_property.py	/^    def age(self, value):$/;"	m	class:Person
+age	.\advance\OOP\brother_ma_005_propertydecorator.py	/^    def age(self):$/;"	m	class:Person
+age	.\advance\OOP\brother_ma_005_propertydecorator.py	/^    def age(self, age):$/;"	m	class:Person
+analyze_txt	.\basic\split_example.py	/^def analyze_txt():$/;"	f
+app	.\spider\web\flask\hello_flask.py	/^app = Flask(__name__)$/;"	v
+append	.\alog\List\DoublyLinkList_example.py	/^    def append(self, item):$/;"	m	class:DLinkedList
+append	.\alog\List\ListNode_example.py	/^    def append(self, item):$/;"	m	class:LinkedList
+append	.\alog\List\ListNode_example2.py	/^    def append(self, item):$/;"	m	class:LinkedList
+append	.\alog\List\unorderedlinkedlist.py	/^    def append(self, item):$/;"	m	class:UnorderedList
+appraise_level_list	.\advance\bigdata\mock_data_order.py	/^appraise_level_list = ['一星', '两星', '三星', '四星', '五星']$/;"	v
+argparse	.\3rd_lib\csv2docx\csv2docx.py	/^import argparse$/;"	i
+argparse	.\advance\3rd_lib\my_cli.py	/^import argparse$/;"	i
+args	.\advance\3rd_lib\my_cli.py	/^args = parser.parse_args()$/;"	v
+array	.\basic\alog\array_concept.py	/^from array import array$/;"	i
+averager	.\advance\decorators\FP_closure.py	/^    def averager(new_value):$/;"	f	function:make_averager
+avg	.\advance\decorators\FP_closure.py	/^    avg = Averager()$/;"	v
+avg	.\advance\decorators\FP_closure.py	/^    avg = make_averager()$/;"	v
+b	.\advance\decorators\FP_func_variable.py	/^b = 6$/;"	v
+b	.\alog\List\DoublyLinkList_example.py	/^    b = DlistNode('77')$/;"	v	class:DLinkedList
+b	.\alog\List\ListNode_example.py	/^    b = ListNode(53)$/;"	v	class:LinkedList
+ball	.\basic\class_concept\ball.py	/^class ball(object):$/;"	c
+bar	.\advance\OOP\example_classmethod.py	/^    bar = 1$/;"	v	class:A
+bar	.\advance\decorators\example_decoration.py	/^def bar():$/;"	f
+bar	.\advance\decorators\mylog.py	/^def bar(args='test'):$/;"	f
+barcode	.\advance\bigdata\mock_data_order.py	/^from faker.providers import internet, profile, user_agent, phone_number, barcode$/;"	i
+barcode	.\advance\bigdata\mock_data_profile_multi.py	/^from faker.providers import internet,profile,user_agent,phone_number,barcode$/;"	i
+barcode	.\advance\bigdata\mock_data_tracking_multi.py	/^from faker.providers import internet,profile,user_agent,phone_number,barcode$/;"	i
+bounce	.\basic\class_concept\ball.py	/^    def bounce(self):$/;"	m	class:ball
+browsers	.\advance\bigdata\mock_data_order.py	/^browsers = ['Chrome', 'FireFox', 'Internet Explorer', 'BaiDu', 'Other', 'Opera',$/;"	v
+browsers	.\advance\bigdata\mock_data_profile_multi.py	/^browsers = ['Chrome','FireFox','Internet Explorer','BaiDu','Other','Opera','Safari','SouGou','UC',' Microsoft Edge','QQ']$/;"	v
+browsers	.\advance\bigdata\mock_data_tracking_multi.py	/^browsers = ['Chrome','FireFox','Internet Explorer','BaiDu','Other','Opera','Safari','SouGou','UC',' Microsoft Edge','QQ']$/;"	v
+c	.\advance\OOP\brother_ma_001_oop_example.py	/^c = MyClass()$/;"	v
+c	.\advance\OOP\brother_ma_006_homework_1.py	/^    def c(self):$/;"	m	class:Temperature
+c	.\advance\OOP\brother_ma_008_inheritance_control.py	/^c = Cat(3, 5, 15)$/;"	v
+c	.\advance\OOP\brother_ma_009_override.py	/^c = Cat()$/;"	v
+c	.\alog\List\DoublyLinkList_example.py	/^    c = DlistNode('88')$/;"	v	class:DLinkedList
+c	.\alog\List\ListNode_example.py	/^    c = ListNode(59)$/;"	v	class:LinkedList
+c2f	.\advance\OOP\brother_ma_006_homework_1.py	/^    def c2f(cls, c):$/;"	m	class:Temperature
+c2k	.\advance\OOP\brother_ma_006_homework_1.py	/^    def c2k(cls, c):$/;"	m	class:Temperature
+c_add	.\advance\decorators\sort_definition.py	/^def c_add(x):$/;"	f
+campaigns	.\advance\bigdata\mock_data_order.py	/^campaigns = ['CC80013', 'CC80012', 'CC80011', 'CC80014', 'CC80015', 'CC80016',$/;"	v
+campaigns	.\advance\bigdata\mock_data_profile_multi.py	/^campaigns = ['CC80013','CC80012','CC80011','CC80014','CC80015','CC80016','CC80017','CC80018','CC80019','CC80020','CC80021','CC80022','CC80023','CC80024']$/;"	v
+campaigns	.\advance\bigdata\mock_data_tracking_multi.py	/^campaigns = ['CC80013','CC80012','CC80011','CC80014','CC80015','CC80016','CC80017','CC80018','CC80019','CC80020','CC80021','CC80022','CC80023','CC80024']$/;"	v
+car	.\advance\OOP\brother_ma_006_homework_1.py	/^    car = Car('audi', 'red', 100, 100)$/;"	v
+check_is_admin	.\advance\decorators\example_01_decorator.py	/^def check_is_admin(f):$/;"	f
+check_is_admin	.\advance\decorators\example_decoration.py	/^def check_is_admin(username):$/;"	f
+ci	.\advance\OOP\brother_ma_006_homework_1.py	/^    ci = CarInfo()$/;"	v
+classmeth	.\advance\OOP\example_classmethod.py	/^    def classmeth(*args):$/;"	m	class:Demo
+clear	.\advance\mysql\mock_insight_from_mysql.py	/^    def clear(self, table_name):$/;"	m	class:MySQLDb
+click	.\advance\3rd_lib\my_click.py	/^import click$/;"	i
+close	.\advance\mysql\mock_insight_from_mysql.py	/^    def close(self):$/;"	m	class:MySQLDb
+codecs	.\advance\common_std\re_example\search_speicified_table.py	/^import codecs$/;"	i
+codecs	.\basic\split_example.py	/^import codecs$/;"	i
+codes	.\basic\alog\list_concept.py	/^codes = []$/;"	v
+codes_le	.\basic\alog\list_concept.py	/^codes_le = [ord(symbol) for symbol in symbols]$/;"	v
+compute	.\advance\processing_threading\threading.py	/^def compute():$/;"	f
+con	.\advance\mysql\mock_insight.py	/^con = pymysql.connect(**config)$/;"	v
+concat_string	.\advance\Functional_programming\func_example.py	/^concat_string=concat("I love", "you!")$/;"	v
+config	.\advance\mysql\mock_insight.py	/^config = {$/;"	v
+connect	.\advance\mysql\mock_insight_from_mysql.py	/^from pymysql import connect, cursors$/;"	i
+content	.\basic\tryexcept\tryexcept.py	/^        content = file.read()$/;"	v
+cooke_dog	.\basic\class_concept\hotdog.py	/^    def cooke_dog(self, time):$/;"	m	class:HotDog
+cookie	.\spider\login.py	/^cookie = cookiejar.CookieJar()$/;"	v
+cookiejar	.\spider\login.py	/^from http import cookiejar$/;"	i
+copy_properties	.\basic\function_concept\decorator_example.py	/^def copy_properties(src):$/;"	f
+count	.\advance\OOP\brother_ma_008_inheritance_control.py	/^    def count(self):$/;"	m	class:Cat
+count_down	.\advance\decorators\example_02_decorator.py	/^def count_down(n):$/;"	f
+counter	.\advance\decorators\high_order_func_example01.py	/^def counter(base=10):$/;"	f
+counter_closure	.\advance\decorators\high_order_func_example01.py	/^def counter_closure(base=10):$/;"	f
+cparser	.\advance\mysql\mock_insight_from_mysql.py	/^import configparser as cparser$/;"	i
+createSQL	.\advance\mysql\mock_insight_fly.py	/^def createSQL():$/;"	f
+createSQL	.\advance\mysql\mock_insight_from_mysql.py	/^def createSQL():$/;"	f
+create_table	.\3rd_lib\csv2docx\csv2docx.py	/^    def create_table(self, header, records):$/;"	m	class:MyDoc
+csv	.\3rd_lib\csv2docx\csv2docx.py	/^import csv$/;"	i
+csv	.\advance\bigdata\mock_big_data.py	/^import csv$/;"	i
+csv	.\advance\lib\faker\faker_example.py	/^import csv$/;"	i
+csv	.\basic\test.py	/^import csv$/;"	i
+csv2dict	.\basic\test.py	/^def csv2dict(in_file):$/;"	f
+csv2dict1	.\basic\test.py	/^def csv2dict1( filename, delimiter = ',', has_header = True, text_columns = None ):$/;"	f
+csv2dict_update	.\basic\test.py	/^def csv2dict_update(filename):$/;"	f
+csv_name	.\3rd_lib\csv2docx\csv2docx.py	/^    csv_name = sys.argv[1]$/;"	v
+cursors	.\advance\mysql\mock_insight.py	/^import pymysql.cursors$/;"	i
+cursors	.\advance\mysql\mock_insight_from_mysql.py	/^from pymysql import connect, cursors$/;"	i
+d	.\advance\OOP\what_is_super.py	/^    d = D()$/;"	v	class:D
+data	.\basic\alog\unpack.py	/^data = ['ACME', 50, 91.1, (2012, 12, 21)]$/;"	v
+data_dir	.\basic\test.py	/^from config.var_config import data_dir$/;"	i
+date	.\advance\bigdata\mock_big_data.py	/^from datetime import date$/;"	i
+date	.\advance\bigdata\test.py	/^from datetime import date$/;"	i
+datetime	.\advance\bigdata\mock_data_order.py	/^import datetime$/;"	i
+datetime	.\advance\bigdata\mock_data_profile_multi.py	/^import datetime$/;"	i
+datetime	.\advance\bigdata\mock_data_tracking_multi.py	/^import datetime$/;"	i
+datetime	.\advance\processing_threading\threading.py	/^import datetime$/;"	i
+db_config_file_path	.\advance\mysql\mock_insight_from_mysql.py	/^db_config_file_path='db_config.ini'$/;"	v
+dct_pwd_name	.\basic\login.py	/^dct_pwd_name = {$/;"	v
+deco	.\advance\decorators\mylog.py	/^def deco(func):$/;"	f
+decorate	.\advance\decorators\example_02_decorator.py	/^    def decorate(func):$/;"	f	function:logged
+decorator1	.\advance\decorators\example_02_decorator.py	/^def decorator1(func):$/;"	f
+decorator2	.\advance\decorators\example_02_decorator.py	/^def decorator2(func):$/;"	f
+define_class_method	.\advance\OOP\brother_ma_002_oop_example.py	/^    def define_class_method(cls):$/;"	m	class:Person
+define_cls_method	.\advance\OOP\brother_ma_009_override.py	/^    def define_cls_method(cls):$/;"	m	class:Animal
+define_cls_method	.\advance\OOP\brother_ma_009_override.py	/^    def define_cls_method(cls):$/;"	m	class:Cat
+define_fn	.\basic\function_concept\72_parameters.py	/^def define_fn(x=10, y=11, *args, **kwargs):$/;"	f
+define_nomal_method	.\advance\OOP\brother_ma_002_oop_example.py	/^    def define_nomal_method():$/;"	m	class:Person
+define_static_method	.\advance\OOP\brother_ma_002_oop_example.py	/^    def define_static_method():$/;"	m	class:Person
+define_static_method	.\advance\OOP\brother_ma_009_override.py	/^    def define_static_method():$/;"	m	class:Animal
+define_static_method	.\advance\OOP\brother_ma_009_override.py	/^    def define_static_method():$/;"	m	class:Cat
+deliver_companies	.\advance\bigdata\mock_data_order.py	/^deliver_companies = ['中通', '圆通', '顺丰', 'EMS', '韵达', '申通', '百世汇通', '其他']$/;"	v
+delta	.\advance\bigdata\mock_data_order.py	/^        delta = datetime.timedelta(days=index)$/;"	v
+delta	.\advance\bigdata\mock_data_profile_multi.py	/^        delta = datetime.timedelta(days=index)$/;"	v
+delta	.\advance\bigdata\mock_data_tracking_multi.py	/^        delta = datetime.timedelta(days=index)$/;"	v
+device_types	.\advance\bigdata\mock_data_order.py	/^device_types = ['PC', 'Mobile', 'Other']$/;"	v
+device_types	.\advance\bigdata\mock_data_profile_multi.py	/^device_types = ['PC','Mobile','Other']$/;"	v
+device_types	.\advance\bigdata\mock_data_tracking_multi.py	/^device_types = ['PC','Mobile','Other']$/;"	v
+dict_example	.\advance\iteration\iter_test.py	/^dict_example = {'a': 1, 'b': 2}$/;"	v
+dis	.\advance\decorators\FP_func_variable.py	/^from dis import dis$/;"	i
+divide	.\advance\unitest_example\myfunc.py	/^def divide(a, b):$/;"	f
+dll	.\alog\List\DoublyLinkList_example.py	/^    dll = DLinkedList()$/;"	v	class:DLinkedList
+do_global	.\advance\decorators\FP_closure.py	/^    def do_global():$/;"	f	function:scope_test
+do_local	.\advance\decorators\FP_closure.py	/^    def do_local():$/;"	f	function:scope_test
+do_nonlocal	.\advance\decorators\FP_closure.py	/^    def do_nonlocal():$/;"	f	function:scope_test
+doc_name	.\3rd_lib\csv2docx\csv2docx.py	/^    doc_name = sys.argv[2]$/;"	v
+dst_file	.\advance\common_std\re_example\search_speicified_table.py	/^    dst_file = r"D:\\Git\\genejiang2012\\py_basic_intermediate_advanced\\advance\\common_std\\re_example\\test.txt"$/;"	v
+dst_file	.\basic\split_example.py	/^dst_file = r"D:\\Git\\genejiang2012\\py_basic_intermediate_advanced\\after.txt"$/;"	v
+eat	.\advance\OOP\brother_ma_008_inheritance_control.py	/^    def eat(self):$/;"	m	class:Animal
+f	.\advance\OOP\brother_ma_006_homework_1.py	/^    def f(self):$/;"	m	class:Temperature
+f	.\advance\OOP\brother_ma_010_inherit_initialize.py	/^f = B(200, 300)$/;"	v
+f1	.\advance\decorators\FP_decorators_example01.py	/^def f1():$/;"	f
+f2	.\advance\decorators\FP_decorators_example01.py	/^def f2():$/;"	f
+f2c	.\advance\OOP\brother_ma_006_homework_1.py	/^    def f2c(cls, f):$/;"	m	class:Temperature
+f2k	.\advance\OOP\brother_ma_006_homework_1.py	/^    def f2k(cls, f):$/;"	m	class:Temperature
+f3	.\advance\decorators\FP_decorators_example01.py	/^def f3():$/;"	f
+fact	.\advance\Functional_programming\func_example.py	/^fact = factorial$/;"	v
+factorial	.\advance\Functional_programming\func_example.py	/^def factorial(n):$/;"	f
+fake	.\3rd_lib\faker_lib.py	/^fake = Faker("zh_CN")$/;"	v
+fake	.\advance\lib\faker\faker_example.py	/^fake = Faker()$/;"	v
+faker	.\advance\bigdata\mock_data_order.py	/^faker = Faker(locale='zh_CN')$/;"	v
+fib	.\basic\function_concept\recursion_example.py	/^def fib(n):$/;"	f
+fieldnames	.\advance\lib\faker\faker_example.py	/^    fieldnames = ['first_name', 'last_name', 'email', 'address', 'postalcode',$/;"	v
+file_path	.\basic\file_concept\transverse_file.py	/^file_path = r"C:\\Users\\Administrator\\Downloads\\split_normal"$/;"	v
+filename	.\basic\tryexcept\tryexcept.py	/^filename = 'test.txt'$/;"	v
+floats	.\basic\alog\array_concept.py	/^floats = array('d', (random() for i in range(10**7)))$/;"	v
+fn	.\basic\function_concept\72_parameters.py	/^def fn(*args, x=2, y=3):$/;"	f
+foo	.\advance\OOP\brother_ma_001_oop_example.py	/^    def foo(self):  # 类的方法也是类的属性$/;"	m	class:MyKlass
+foo	.\advance\OOP\brother_ma_001_oop_example.py	/^    def foo(self):$/;"	m	class:MyClass
+foo	.\advance\decorators\FP_highorder_func.py	/^def foo():$/;"	f
+foo	.\advance\decorators\FP_highorder_func.py	/^foo=timer(foo)$/;"	v
+foo	.\advance\decorators\example_decoration.py	/^def foo():$/;"	f
+foo	.\advance\decorators\mylog.py	/^def foo(): $/;"	f
+from	.\3rd_lib\csv2docx\csv2docx.py	/^        self.document = Document()  # use the Document class from docx$/;"	c	function:MyDoc.__init__
+fruits	.\advance\Functional_programming\func_example.py	/^fruits = ['strawberry', 'fig', 'apple', 'cherry', 'raspberry', 'banana']$/;"	v
+func	.\advance\decorators\FP_func_variable.py	/^def func(a):$/;"	f
+func	.\advance\decorators\FP_nested_func.py	/^    func=outer()$/;"	v
+func1	.\advance\OOP\example_classmethod.py	/^    def func1(self):$/;"	m	class:A
+func2	.\advance\OOP\example_classmethod.py	/^    def func2(cls):$/;"	m	class:A
+genders	.\advance\bigdata\mock_data_order.py	/^genders = ['男', '女', '未知']$/;"	v
+genders	.\advance\bigdata\mock_data_profile_multi.py	/^genders = ['男','女','未知']$/;"	v
+genders	.\advance\bigdata\mock_data_tracking_multi.py	/^genders = ['男','女','未知']$/;"	v
+generate	.\advance\OOP\brother_ma_006_homework_1.py	/^    def generate(cls, start=1, stop=100, count=10):$/;"	m	class:RandomToolGene
+generate	.\advance\OOP\brother_ma_006_homework_1.py	/^    def generate(self, count):$/;"	m	class:RandomToolGenerator
+generate	.\advance\OOP\brother_ma_006_homework_1.py	/^    def generate(self, start=1, stop=1000, count=1000):$/;"	m	class:RandomGen
+generate_big_data	.\advance\bigdata\mock_big_data.py	/^def generate_big_data(file_name, num, coding_style):$/;"	f
+generate_channel_id	.\advance\bigdata\mock_big_data.py	/^def generate_channel_id(num):$/;"	f
+generate_city	.\advance\bigdata\mock_big_data.py	/^def generate_city(num):$/;"	f
+generate_id	.\advance\bigdata\mock_big_data.py	/^def generate_id(num):$/;"	f
+generate_id	.\advance\bigdata\test.py	/^def generate_id(num):$/;"	f
+generate_member_id	.\advance\bigdata\mock_big_data.py	/^def generate_member_id(num):$/;"	f
+generate_member_name	.\advance\bigdata\mock_big_data.py	/^def generate_member_name(num):$/;"	f
+generate_phone_number	.\advance\bigdata\mock_big_data.py	/^def generate_phone_number(num):$/;"	f
+generate_province	.\advance\bigdata\mock_big_data.py	/^def generate_province(num):$/;"	f
+gennerator	.\advance\bigdata\mock_big_data.py	/^def gennerator():$/;"	f
+gennerator	.\advance\bigdata\test.py	/^def gennerator():$/;"	f
+get_age	.\advance\OOP\brother_ma_003_oop_access.py	/^    def get_age(self):$/;"	m	class:Person
+get_age	.\advance\OOP\brother_ma_005_propertydecorator.py	/^    def get_age(self):$/;"	m	class:Person
+get_all	.\advance\OOP\brother_ma_006_homework_1.py	/^    def get_all(self):$/;"	m	class:CarInfo
+get_data	.\advance\mysql\mock_insight_from_mysql.py	/^    def get_data(self, section_name, key_name):$/;"	m	class:ParseConfigIni
+get_false	.\test_framework\my_pytest\my_module\my_func.py	/^    def get_false():$/;"	m	class:MyModule
+get_file_size	.\basic\file_concept\transverse_file.py	/^def get_file_size(file_path):$/;"	f
+get_food	.\advance\decorators\example_01_decorator.py	/^    def get_food(self, username, food):$/;"	m	class:Store
+get_food	.\advance\decorators\example_decoration.py	/^def get_food(self, username, food):$/;"	f
+get_item	.\alog\List\ListNode_example2.py	/^    def get_item(self, index):$/;"	m	class:LinkedList
+get_score	.\advance\OOP\brother_ma_003_oop_access.py	/^    def get_score(self):$/;"	m	class:Person
+get_score	.\advance\OOP\test1.py	/^    def get_score(self):$/;"	m	class:Person
+get_tag	.\advance\mysql\mock_insight_from_mysql.py	/^def get_tag():$/;"	f
+get_tag_value	.\advance\mysql\mock_insight_from_mysql.py	/^def get_tag_value():$/;"	f
+get_tag_value_list	.\advance\mysql\mock_insight_from_mysql.py	/^def get_tag_value_list():$/;"	f
+get_true	.\test_framework\my_pytest\my_module\my_func.py	/^    def get_true():$/;"	m	class:MyModule
+getdistrictcode	.\advance\bigdata\mock_big_data.py	/^def getdistrictcode():$/;"	f
+getdistrictcode	.\advance\bigdata\test.py	/^def getdistrictcode():$/;"	f
+grow_up	.\advance\OOP\brother_ma_003_oop_access.py	/^    def grow_up(self, i=1):$/;"	m	class:Person
+handler	.\spider\login.py	/^handler = request.HTTPCookieProcessor(cookie)$/;"	v
+hashlib	.\advance\bigdata\mock_data_order.py	/^import hashlib$/;"	i
+hashlib	.\advance\bigdata\mock_data_profile_multi.py	/^import hashlib$/;"	i
+hashlib	.\advance\bigdata\mock_data_tracking_multi.py	/^import hashlib$/;"	i
+header	.\3rd_lib\csv2docx\csv2docx.py	/^    header = ($/;"	v
+height	.\advance\OOP\brother_ma_001_oop_example.py	/^    height = 170$/;"	v	class:PersonNew
+hello	.\advance\3rd_lib\my_click.py	/^def hello():$/;"	f
+hello_world	.\spider\web\flask\hello_flask.py	/^def hello_world():$/;"	f
+help	.\advance\3rd_lib\my_cli.py	/^                    help='interger list')$/;"	v
+help	.\advance\3rd_lib\my_cli.py	/^                    help='sum the integers (default: find the max)')$/;"	v
+http	.\advance\bigdata\mock_data_order.py	/^http = urllib3.PoolManager()$/;"	v
+http	.\advance\bigdata\mock_data_profile_multi.py	/^http = urllib3.PoolManager()$/;"	v
+http	.\advance\bigdata\mock_data_tracking_multi.py	/^http = urllib3.PoolManager()$/;"	v
+inc	.\advance\decorators\high_order_func_example01.py	/^    def inc(step=1):$/;"	f	function:counter
+inc	.\advance\decorators\high_order_func_example01.py	/^    def inc(step=1):$/;"	f	function:counter_closure
+index	.\advance\iteration\iter_test.py	/^index = 0$/;"	v
+index	.\alog\List\unorderedlinkedlist.py	/^    def index(self, index):$/;"	m	class:UnorderedList
+inner	.\advance\decorators\FP_nested_func.py	/^    def inner():$/;"	f	function:outer
+inner	.\advance\decorators\mylog.py	/^    def inner():$/;"	f	function:deco
+inner	.\basic\function_concept\72_parameters.py	/^    def inner():$/;"	f	function:outer1
+input_double_values	.\basic\function_concept\72_parameters.py	/^def input_double_values(*args):$/;"	f
+insert	.\advance\mysql\mock_insight_from_mysql.py	/^    def insert(self, table_name, table_data):$/;"	m	class:MySQLDb
+insert	.\alog\List\unorderedlinkedlist.py	/^    def insert(self, index, item):$/;"	m	class:UnorderedList
+internet	.\advance\bigdata\mock_data_order.py	/^from faker.providers import internet, profile, user_agent, phone_number, barcode$/;"	i
+internet	.\advance\bigdata\mock_data_profile_multi.py	/^from faker.providers import internet,profile,user_agent,phone_number,barcode$/;"	i
+internet	.\advance\bigdata\mock_data_tracking_multi.py	/^from faker.providers import internet,profile,user_agent,phone_number,barcode$/;"	i
+isValid	.\alog\leetcode\20_Valid_Parenthese.py	/^    def isValid(self, s: str) -> bool:$/;"	m	class:Solution
+is_appraise_list	.\advance\bigdata\mock_data_order.py	/^is_appraise_list = ['未点评', '已点评']$/;"	v
+is_empty	.\alog\List\unorderedlinkedlist.py	/^    def is_empty(self):$/;"	m	class:UnorderedList
+is_empty	.\alog\Stack\my_stack.py	/^    def is_empty(self):$/;"	m	class:Stack
+is_empty	.\alog\leetcode\20_Valid_Parenthese.py	/^    def is_empty(self):$/;"	m	class:Stack
+iter_dict	.\advance\iteration\iter_test.py	/^iter_dict = dict_example.__iter__()$/;"	v
+iter_l	.\advance\iteration\iter_test.py	/^iter_l = l.__iter__()$/;"	v
+iter_test	.\advance\iteration\iter_test.py	/^iter_test = x.__iter__()$/;"	v
+jerry	.\advance\OOP\brother_ma_001_oop_example.py	/^jerry = Person('Jerry', 20)$/;"	v
+jerry_2	.\advance\OOP\brother_ma_001_oop_example.py	/^jerry_2 = PersonNew('Jerry', 20)$/;"	v
+k	.\advance\OOP\brother_ma_006_homework_1.py	/^    def k(self):$/;"	m	class:Temperature
+k2c	.\advance\OOP\brother_ma_006_homework_1.py	/^    def k2c(cls, k):$/;"	m	class:Temperature
+k2f	.\advance\OOP\brother_ma_006_homework_1.py	/^    def k2f(cls, k):$/;"	m	class:Temperature
+klassmeth	.\advance\OOP\FP_classmethod_staticmethod.py	/^    def klassmeth(*args):$/;"	m	class:Demo
+l	.\advance\iteration\iter_test.py	/^l = [1,2, 3]$/;"	v
+l1	.\alog\leetcode\add_two_numbs.py	/^    l1 = ListNode(2)$/;"	v	class:Solution
+l2	.\alog\leetcode\add_two_numbs.py	/^    l2 = ListNode(5)$/;"	v	class:Solution
+length	.\alog\List\unorderedlinkedlist.py	/^    def length(self):$/;"	m	class:UnorderedList
+line	.\basic\file_concept\filer_operation.py	/^        line = f.readline()$/;"	v
+little_data	.\advance\OOP\brother_ma_006_homework_1.py	/^    little_data = RandomGen(1, 100, 10)$/;"	v
+ll	.\alog\List\ListNode_example.py	/^    ll = LinkedList()$/;"	v	class:LinkedList
+ll	.\alog\List\ListNode_example2.py	/^    ll = LinkedList()$/;"	v
+local_dict	.\3rd_lib\pandas_exericise\pandas_example.py	/^local_dict = {'A': 1, 'B': pd.Timestamp($/;"	v
+local_string	.\alog\Stack\my_stack.py	/^local_string = "{ [ ( ( ) ) ] }"$/;"	v
+logged	.\advance\decorators\example_02_decorator.py	/^def logged(level, name=None, message=None):$/;"	f
+logged	.\advance\decorators\mylog.py	/^def logged(func, *args, **kwargs):$/;"	f
+logger	.\basic\function_concept\decorator_example.py	/^def logger(fn):$/;"	f
+logging	.\advance\decorators\example_02_decorator.py	/^import logging$/;"	i
+logging	.\advance\decorators\mylog.py	/^import logging$/;"	i
+lst	.\advance\OOP\brother_ma_006_homework_1.py	/^    lst = rg.generate(10)$/;"	v
+lst	.\advance\decorators\high_order_func_example01.py	/^    lst = [3, 7, 10, 5, 4]$/;"	v
+lst1	.\advance\OOP\brother_ma_006_homework_1.py	/^    lst1 = [Point(x, y) for x, y in zip(rg.generate(10), rg.generate(10))]$/;"	v
+lst_sql	.\advance\mysql\mock_insight_from_mysql.py	/^    lst_sql = createSQL()$/;"	v
+main	.\advance\decorators\FP_decorators_example01.py	/^def main():$/;"	f
+make_averager	.\advance\decorators\FP_closure.py	/^def make_averager():$/;"	f
+matplotlib	.\3rd_lib\pandas_exericise\pandas_example.py	/^import matplotlib.pyplot as plt$/;"	i
+medias	.\advance\bigdata\mock_data_order.py	/^medias = ['display', 'video']$/;"	v
+medias	.\advance\bigdata\mock_data_profile_multi.py	/^medias = ['display','video']$/;"	v
+medias	.\advance\bigdata\mock_data_tracking_multi.py	/^medias = ['display','video']$/;"	v
+method	.\advance\OOP\brother_ma_002_oop_example.py	/^    def method(self):$/;"	m	class:Person
+minimum	.\basic\function_concept\72_parameters.py	/^def minimum(*values, clip=None):$/;"	f
+minus	.\advance\unitest_example\myfunc.py	/^def minus(a, b):$/;"	f
+mock_order	.\advance\bigdata\mock_data_order.py	/^def mock_order(seq, dt, row_cnt):$/;"	f
+mock_tracking	.\advance\bigdata\mock_data_order.py	/^def mock_tracking(seq, dt):$/;"	f
+mock_tracking	.\advance\bigdata\mock_data_tracking_multi.py	/^def mock_tracking(seq,dt,row_cnt):$/;"	f
+mock_user	.\advance\bigdata\mock_data_order.py	/^def mock_user(seq, dt):$/;"	f
+mock_user	.\advance\bigdata\mock_data_profile_multi.py	/^def mock_user(seq,dt,row_cnt):$/;"	f
+multify	.\advance\unitest_example\myfunc.py	/^def multify(a, b):$/;"	f
+my_class	.\intermediate\plugin_dev\test_plugin.py	/^    my_class = __import__('plug')$/;"	v
+my_csv	.\3rd_lib\csv2docx\csv2docx.py	/^    my_csv = DataCSV(csv_name)$/;"	v
+my_df	.\3rd_lib\pandas_exericise\pandas_example.py	/^my_df = pd.DataFrame(local_dict)$/;"	v
+my_doc	.\3rd_lib\csv2docx\csv2docx.py	/^    my_doc = MyDoc()$/;"	v
+my_food	.\advance\decorators\example_01_decorator.py	/^    my_food = my_store.get_food(admin='admin', food='Juice')$/;"	v
+my_func	.\test_framework\my_pytest\test\test_my_func.py	/^from ..my_module import my_func$/;"	i
+my_generator	.\advance\Functional_programming\generator_programing.py	/^def my_generator():$/;"	f
+my_sloution	.\alog\leetcode\20_Valid_Parenthese.py	/^    my_sloution = Solution()$/;"	v	class:Solution
+my_store	.\advance\decorators\example_01_decorator.py	/^    my_store = Store()$/;"	v
+my_unorderedlist	.\alog\List\unorderedlinkedlist.py	/^my_unorderedlist = UnorderedList()$/;"	v
+myball	.\basic\class_concept\ball.py	/^myball = ball()$/;"	v
+mydog	.\basic\class_concept\hotdog.py	/^mydog = HotDog()$/;"	v
+name	.\advance\OOP\brother_ma_007_inheritance.py	/^    def name(self):$/;"	m	class:Animal
+name	.\basic\login.py	/^    name = input('username >>: ')$/;"	v
+name	.\basic\string_example.py	/^name = 'C:\/a\/b\/c\/d.txt'  # 只想拿到顶级目录$/;"	v
+name	.\basic\string_example.py	/^name = 'root:x:0:0::\/root:\/bin\/bash'$/;"	v
+new_func	.\advance\decorators\mylog.py	/^    def new_func(*args, **kwargs):$/;"	f	function:logged
+new_list	.\advance\mysql\mock_insight.py	/^new_list = []$/;"	v
+new_logger	.\basic\function_concept\decorator_example.py	/^def new_logger(fn, *args, **kwargs):$/;"	f
+np	.\3rd_lib\pandas_exericise\pandas_example.py	/^import numpy as np$/;"	i
+obj_ReverseString	.\basic\DS\string_reverse.py	/^obj_ReverseString = ReverseString('abcd')$/;"	v
+old_logger	.\basic\function_concept\decorator_example.py	/^def old_logger(fn):$/;"	f
+one_record	.\3rd_lib\csv2docx\csv2docx.py	/^    one_record = []$/;"	v
+opener	.\spider\login.py	/^opener = request.build_opener(handler)$/;"	v
+operate_file	.\3rd_lib\csv2docx\csv2docx.py	/^    def operate_file(self):$/;"	m	class:DataCSV
+order_status_list	.\advance\bigdata\mock_data_order.py	/^order_status_list = ['用户拒收', '未付款的订单', '用户取消', '待发货', '配送中', '确认收货']$/;"	v
+os	.\advance\bigdata\mock_big_data.py	/^import os$/;"	i
+os	.\advance\bigdata\test.py	/^import os$/;"	i
+os	.\basic\file_concept\transverse_file.py	/^import os$/;"	i
+outer	.\advance\decorators\FP_nested_func.py	/^def outer():$/;"	f
+outer1	.\basic\function_concept\72_parameters.py	/^def outer1():$/;"	f
+p	.\advance\bigdata\mock_data_order.py	/^    p = Pool((int(total) \/\/ int(page_size)) + 1)$/;"	v
+p	.\advance\bigdata\mock_data_profile_multi.py	/^    p = Pool((int(total) \/\/ int(page_size)) + 1)$/;"	v
+p	.\advance\bigdata\mock_data_tracking_multi.py	/^    p = Pool((int(total) \/\/ int(page_size)) + 1)$/;"	v
+p	.\basic\alog\unpack.py	/^p = (4, 5)$/;"	v
+page_size	.\advance\bigdata\mock_data_order.py	/^    page_size = int(sys.argv[2])$/;"	v
+page_size	.\advance\bigdata\mock_data_profile_multi.py	/^    page_size = int(sys.argv[2])$/;"	v
+page_size	.\advance\bigdata\mock_data_tracking_multi.py	/^    page_size = int(sys.argv[2])$/;"	v
+par_checker	.\alog\Stack\my_stack.py	/^def par_checker(symbol_string : list):$/;"	f
+parse	.\spider\login.py	/^from urllib import parse$/;"	i
+parse_argument	.\3rd_lib\csv2docx\csv2docx.py	/^def parse_argument(argv):$/;"	f
+parser	.\advance\3rd_lib\my_cli.py	/^parser = argparse.ArgumentParser(description='Add some integers.')$/;"	v
+pattern	.\advance\common_std\re_example\search_speicified_table.py	/^    pattern = re.compile("from \\s*\\w*\\.\\w*")$/;"	v
+pay_from_list	.\advance\bigdata\mock_data_order.py	/^pay_from_list = ['支付宝', '微信', '银联', '其他']$/;"	v
+pay_level_list	.\advance\bigdata\mock_data_order.py	/^pay_level_list = ['低级', '中级', '高级', '钻石']$/;"	v
+pd	.\3rd_lib\pandas_exericise\pandas_example.py	/^import pandas as pd$/;"	i
+pd	.\advance\mysql\mock_insight.py	/^import pandas as pd$/;"	i
+peek	.\alog\Stack\my_stack.py	/^    def peek(self):$/;"	m	class:Stack
+phone_number	.\advance\bigdata\mock_data_order.py	/^from faker.providers import internet, profile, user_agent, phone_number, barcode$/;"	i
+phone_number	.\advance\bigdata\mock_data_profile_multi.py	/^from faker.providers import internet,profile,user_agent,phone_number,barcode$/;"	i
+phone_number	.\advance\bigdata\mock_data_tracking_multi.py	/^from faker.providers import internet,profile,user_agent,phone_number,barcode$/;"	i
+plt	.\3rd_lib\pandas_exericise\pandas_example.py	/^import matplotlib.pyplot as plt$/;"	i
+pop	.\alog\List\unorderedlinkedlist.py	/^    def pop(self):$/;"	m	class:UnorderedList
+pop	.\alog\Stack\my_stack.py	/^    def pop(self):$/;"	m	class:Stack
+pop	.\alog\leetcode\20_Valid_Parenthese.py	/^    def pop(self):$/;"	m	class:Stack
+printv	.\advance\OOP\brother_ma_010_inherit_initialize.py	/^    def printv(self):$/;"	m	class:B
+profile	.\advance\bigdata\mock_data_order.py	/^from faker.providers import internet, profile, user_agent, phone_number, barcode$/;"	i
+profile	.\advance\bigdata\mock_data_profile_multi.py	/^from faker.providers import internet,profile,user_agent,phone_number,barcode$/;"	i
+profile	.\advance\bigdata\mock_data_tracking_multi.py	/^from faker.providers import internet,profile,user_agent,phone_number,barcode$/;"	i
+province_city	.\advance\bigdata\mock_data_order.py	/^province_city = {$/;"	v
+province_city	.\advance\bigdata\mock_data_profile_multi.py	/^province_city = {$/;"	v
+province_city	.\advance\bigdata\mock_data_tracking_multi.py	/^province_city = {$/;"	v
+province_list	.\advance\bigdata\mock_data_order.py	/^province_list = ['北京市', '天津市', '上海市', '重庆市', '河南省', '安徽省', '福建省', '甘肃省', '贵州省',$/;"	v
+province_list	.\advance\bigdata\mock_data_profile_multi.py	/^province_list = ['北京市', '天津市', '上海市', '重庆市', '河南省', '安徽省', '福建省', '甘肃省', '贵州省', '海南省', '河北省', '黑龙江省', '湖北省', '湖南省', '吉林省', '江苏省', '江西省', '辽宁省', '青海省', '山东省', '山西省', '陕西省', '四川省', '云南省', '浙江省', '台湾省', '广东省', '广西壮族自治区', '内蒙古自治区', '宁夏回族自治区', '西藏藏族自治区', '新疆维吾尔自治区', '香港', '澳门']$/;"	v
+province_list	.\advance\bigdata\mock_data_tracking_multi.py	/^province_list = ['北京市', '天津市', '上海市', '重庆市', '河南省', '安徽省', '福建省', '甘肃省', '贵州省', '海南省', '河北省', '黑龙江省', '湖北省', '湖南省', '吉林省', '江苏省', '江西省', '辽宁省', '青海省', '山东省', '山西省', '陕西省', '四川省', '云南省', '浙江省', '台湾省', '广东省', '广西壮族自治区', '内蒙古自治区', '宁夏回族自治区', '西藏藏族自治区', '新疆维吾尔自治区', '香港', '澳门']$/;"	v
+push	.\alog\Stack\my_stack.py	/^    def push(self, data):$/;"	m	class:Stack
+push	.\alog\leetcode\20_Valid_Parenthese.py	/^    def push(self, data: str):$/;"	m	class:Stack
+put_food	.\advance\decorators\example_01_decorator.py	/^    def put_food(self, username, food):$/;"	m	class:Store
+pwd	.\basic\login.py	/^    pwd = input('password >>:')$/;"	v
+pymysql	.\advance\mysql\mock_insight.py	/^import pymysql$/;"	i
+pymysql	.\advance\mysql\mock_insight.py	/^import pymysql.cursors$/;"	i
+pytest	.\test_framework\my_pytest\test\pytest_example.py	/^import pytest$/;"	i
+qn	.\3rd_lib\csv2docx\csv2docx.py	/^from docx.oxml.shared import OxmlElement, qn$/;"	i
+query	.\advance\mysql\mock_insight_from_mysql.py	/^    def query(self, query_data, table_name, condition):$/;"	m	class:MySQLDb
+random	.\advance\OOP\brother_ma_006_homework_1.py	/^import random$/;"	i
+random	.\advance\bigdata\mock_big_data.py	/^import random$/;"	i
+random	.\advance\bigdata\mock_data_order.py	/^import random$/;"	i
+random	.\advance\bigdata\mock_data_profile_multi.py	/^import random$/;"	i
+random	.\advance\bigdata\mock_data_tracking_multi.py	/^import random$/;"	i
+random	.\advance\bigdata\test.py	/^import random$/;"	i
+random	.\advance\processing_threading\threading.py	/^import random$/;"	i
+random	.\basic\alog\array_concept.py	/^from random import random$/;"	i
+random	.\basic\function_concept\72_parameters.py	/^import random$/;"	i
+re	.\advance\common_std\re_example\search_speicified_table.py	/^import re$/;"	i
+register	.\advance\decorators\FP_decorators_example01.py	/^def register(func):$/;"	f
+register	.\advance\decorators\example_decoration.py	/^def register(f):$/;"	f
+registry	.\advance\decorators\FP_decorators_example01.py	/^registry = []$/;"	v
+remove	.\alog\List\unorderedlinkedlist.py	/^    def remove(self, item):$/;"	m	class:UnorderedList
+request	.\spider\login.py	/^from urllib import request$/;"	i
+requests	.\spider\login.py	/^import requests$/;"	i
+res	.\alog\leetcode\add_two_numbs.py	/^    res = sol.add_two_numbers(l1, l2)$/;"	v	class:Solution
+res	.\basic\string_example.py	/^res = "{}  {}  {}".format('python', 5, 'great PL')$/;"	v
+res2	.\basic\string_example.py	/^res2 = "{1} {0} {1}".format('python', 5, 'great pl')$/;"	v
+res3	.\basic\string_example.py	/^res3 = "{name} {age} {description}".format($/;"	v
+response	.\spider\login.py	/^response = opener.open('http:\/\/www.baidu.com')$/;"	v
+result	.\advance\mysql\mock_insight.py	/^        result = cursor.fetchall()$/;"	v
+results	.\advance\processing_threading\threading.py	/^results = []$/;"	v
+reverse	.\advance\Functional_programming\func_example.py	/^def reverse(word):$/;"	f
+reverse_by_list	.\basic\DS\string_reverse.py	/^    def reverse_by_list(self):$/;"	m	class:ReverseString
+reverse_by_string_property	.\basic\DS\string_reverse.py	/^    def reverse_by_string_property(self):$/;"	m	class:ReverseString
+rg	.\advance\OOP\brother_ma_006_homework_1.py	/^    rg = RandomToolGenerator()$/;"	v
+row_csv2dict	.\basic\test.py	/^def row_csv2dict(csv_file):$/;"	f
+run	.\advance\OOP\brother_ma_007_inheritance.py	/^    def run(self):$/;"	m	class:Dog
+save_doc	.\3rd_lib\csv2docx\csv2docx.py	/^    def save_doc(self, doc_name):$/;"	m	class:MyDoc
+scope_test	.\advance\decorators\FP_closure.py	/^def scope_test():$/;"	f
+search	.\alog\List\unorderedlinkedlist.py	/^    def search(self, item):$/;"	m	class:UnorderedList
+search_table	.\advance\common_std\re_example\search_speicified_table.py	/^def search_table(src_file, dst_file, pattern):$/;"	f
+segmentList	.\advance\mysql\mock_insight_fly.py	/^segmentList=[$/;"	v
+segmentList	.\advance\mysql\mock_insight_from_mysql.py	/^segmentList=[$/;"	v
+setUp	.\advance\unitest_example\unittest_test.py	/^    def setUp(self):$/;"	m	class:TestMathFunction
+setUpClass	.\advance\unitest_example\unittest_test.py	/^    def setUpClass(cls):$/;"	m	class:TestMathFunction
+set_age	.\advance\OOP\brother_ma_005_propertydecorator.py	/^    def set_age(self, age):$/;"	m	class:Person
+set_doc_style	.\3rd_lib\csv2docx\csv2docx.py	/^    def set_doc_style(self):$/;"	m	class:MyDoc
+shade_cells	.\3rd_lib\csv2docx\csv2docx.py	/^        def shade_cells(cells, shade):$/;"	f	function:MyDoc.create_table
+shared	.\3rd_lib\csv2docx\csv2docx.py	/^from docx import shared$/;"	i
+shout	.\advance\OOP\brother_ma_007_inheritance.py	/^    def shout(self):$/;"	m	class:Animal
+shout	.\advance\OOP\brother_ma_007_inheritance.py	/^    def shout(self):$/;"	m	class:Cat
+shout	.\advance\OOP\brother_ma_009_override.py	/^    def shout(self):$/;"	m	class:Animal
+shout	.\advance\OOP\brother_ma_009_override.py	/^    def shout(self):$/;"	m	class:Cat
+shout_count1	.\advance\OOP\brother_ma_008_inheritance_control.py	/^    def shout_count1(cls):$/;"	m	class:Animal
+shout_count3	.\advance\OOP\brother_ma_008_inheritance_control.py	/^    def shout_count3(self):$/;"	m	class:Animal
+show_age	.\advance\OOP\brother_ma_001_oop_example.py	/^    def show_age(self):$/;"	m	class:Person
+show_me	.\intermediate\plugin_dev\plug\plugin.py	/^    def show_me(self):$/;"	m	class:A
+showage	.\advance\OOP\brother_ma_001_oop_example.py	/^    def showage(self):$/;"	m	class:Person
+showlist	.\basic\function_concept\72_parameters.py	/^def showlist():$/;"	f
+size	.\alog\Stack\my_stack.py	/^    def size(self):$/;"	m	class:Stack
+sol	.\alog\leetcode\add_two_numbs.py	/^    sol = Solution()$/;"	v	class:Solution
+sol	.\alog\leetcode\twosum.py	/^    sol = Solution()$/;"	v	class:SolutionThird
+sol	.\basic\alog\twoSum.py	/^    sol = Solution()$/;"	v	class:Solution
+sol2	.\alog\leetcode\twosum.py	/^    sol2 = SolutionSecond()$/;"	v	class:SolutionThird
+sol3	.\alog\leetcode\twosum.py	/^    sol3 = SolutionThird()$/;"	v	class:SolutionThird
+solution	.\advance\LeetCode\001_two_sum.py	/^solution = Solution()$/;"	v
+sort	.\advance\decorators\high_order_func_example01.py	/^def sort(iterable, reverse=False, key=lambda a, b: a < b):$/;"	f
+sort	.\advance\decorators\sort_definition.py	/^def sort(iterable, reverse=False):$/;"	f
+spam	.\advance\decorators\example_02_decorator.py	/^def spam():$/;"	f
+sql	.\advance\mysql\mock_insight.py	/^        sql = query_condition$/;"	v
+src_file	.\advance\common_std\re_example\search_speicified_table.py	/^    src_file = r"D:\\Git\\genejiang2012\\py_basic_intermediate_advanced\\advance\\common_std\\re_example\\dw_das.tag_rv_app_action.txt"$/;"	v
+src_file	.\basic\split_example.py	/^src_file = r"D:\\Git\\genejiang2012\\py_basic_intermediate_advanced\\first_party_tag_tablerule.txt"$/;"	v
+start_dt	.\advance\bigdata\mock_data_order.py	/^    start_dt = datetime.datetime(2019, 01, 01)$/;"	v
+start_dt	.\advance\bigdata\mock_data_profile_multi.py	/^    start_dt = datetime.datetime(2018, 11, 01)$/;"	v
+start_dt	.\advance\bigdata\mock_data_tracking_multi.py	/^    start_dt = datetime.datetime(2018, 11, 01)$/;"	v
+statmeth	.\advance\OOP\FP_classmethod_staticmethod.py	/^    def statmeth(*args):$/;"	m	class:Demo
+statmeth	.\advance\OOP\example_classmethod.py	/^    def statmeth(*args):$/;"	m	class:Demo
+steps_result	.\3rd_lib\csv2docx\csv2docx.py	/^    steps_result = my_csv.operate_file()$/;"	v
+store_txt	.\basic\file_concept\transverse_file.py	/^store_txt = file_path + '\\path.csv'$/;"	v
+string	.\advance\bigdata\mock_big_data.py	/^import string$/;"	i
+svg2png	.\svgString2png.py	/^from cairosvg import svg2png$/;"	i
+symbols	.\basic\alog\list_concept.py	/^symbols = '$¢£¥€¤'$/;"	v
+sys	.\3rd_lib\csv2docx\csv2docx.py	/^import sys$/;"	i
+sys	.\advance\bigdata\mock_big_data.py	/^import sys$/;"	i
+sys	.\advance\bigdata\mock_data_order.py	/^import sys$/;"	i
+sys	.\advance\bigdata\mock_data_profile_multi.py	/^import sys$/;"	i
+sys	.\advance\bigdata\mock_data_tracking_multi.py	/^import sys$/;"	i
+sys	.\advance\common_std\re_example\search_speicified_table.py	/^import sys$/;"	i
+sys	.\basic\split_example.py	/^import sys$/;"	i
+t_seq	.\advance\bigdata\mock_data_tracking_multi.py	/^t_seq=0$/;"	v
+t_str	.\advance\bigdata\mock_data_order.py	/^        t_str = (delta + start_dt).strftime("%Y-%m-%d")$/;"	v
+t_str	.\advance\bigdata\mock_data_profile_multi.py	/^        t_str = (delta + start_dt).strftime("%Y-%m-%d")$/;"	v
+t_str	.\advance\bigdata\mock_data_tracking_multi.py	/^        t_str = (delta + start_dt).strftime("%Y-%m-%d")$/;"	v
+tagList	.\advance\mysql\mock_insight_fly.py	/^tagList=[$/;"	v
+target	.\advance\decorators\mylog.py	/^def target():$/;"	f
+tearDown	.\advance\unitest_example\unittest_test.py	/^    def tearDown(self):$/;"	m	class:TestMathFunction
+tearDownClass	.\advance\unitest_example\unittest_test.py	/^    def tearDownClass(cls):$/;"	m	class:TestMathFunction
+test	.\advance\OOP\example_classmethod.py	/^    def test(cls):$/;"	m	class:B
+test	.\basic\module\example_01\test2.py	/^import test$/;"	i
+test_add	.\advance\unitest_example\unittest_test.py	/^    def test_add(self):$/;"	m	class:TestMathFunction
+test_divide	.\advance\unitest_example\unittest_test.py	/^    def test_divide(self):$/;"	m	class:TestMathFunction
+test_failing	.\test_framework\my_pytest\test\pytest_example.py	/^    def test_failing(self):$/;"	m	class:TestCase
+test_get_false_func	.\test_framework\my_pytest\test\test_my_func.py	/^def test_get_false_func():$/;"	f
+test_get_true_func	.\test_framework\my_pytest\test\test_my_func.py	/^def test_get_true_func():$/;"	f
+test_passing	.\test_framework\my_pytest\test\pytest_example.py	/^    def test_passing(self):$/;"	m	class:TestCase
+test_string	.\alog\leetcode\20_Valid_Parenthese.py	/^    test_string = "()"$/;"	v	class:Solution
+threading	.\advance\processing_threading\threading.py	/^import threading$/;"	i
+time	.\advance\decorators\FP_highorder_func.py	/^import time$/;"	i
+time	.\advance\decorators\example_02_decorator.py	/^import time$/;"	i
+time	.\advance\mysql\mock_insight_from_mysql.py	/^import time$/;"	i
+time	.\basic\function_concept\recursion_example.py	/^import time$/;"	i
+timedelta	.\advance\bigdata\mock_big_data.py	/^from datetime import timedelta$/;"	i
+timedelta	.\advance\bigdata\test.py	/^from datetime import timedelta$/;"	i
+timer	.\advance\decorators\FP_highorder_func.py	/^def timer(func):$/;"	f
+timethis	.\advance\decorators\example_02_decorator.py	/^def timethis(func):$/;"	f
+to_float	.\basic\test.py	/^def to_float( str_value ):$/;"	f
+tom	.\advance\OOP\brother_ma_001_oop_example.py	/^tom = Person('Tom', 28)$/;"	v
+tom	.\advance\OOP\brother_ma_002_oop_example.py	/^tom = Person()$/;"	v
+tom	.\advance\OOP\brother_ma_004_oop_property.py	/^tom = Person('Tom')$/;"	v
+tom	.\advance\OOP\brother_ma_005_propertydecorator.py	/^tom = Person('Tom',20)$/;"	v
+tom	.\advance\OOP\brother_ma_007_inheritance.py	/^tom = Garfied('tom')$/;"	v
+tom_2	.\advance\OOP\brother_ma_001_oop_example.py	/^tom_2 = PersonNew('Tom')$/;"	v
+tom_new	.\advance\OOP\brother_ma_001_oop_example.py	/^tom_new = PersonExample('Tom')$/;"	v
+total	.\advance\bigdata\mock_data_order.py	/^    total = int(sys.argv[1])$/;"	v
+total	.\advance\bigdata\mock_data_profile_multi.py	/^    total = int(sys.argv[1])$/;"	v
+total	.\advance\bigdata\mock_data_tracking_multi.py	/^    total = int(sys.argv[1])$/;"	v
+transfer_list	.\alog\Stack\my_stack.py	/^transfer_list = local_string.split(" ")$/;"	v
+tranversal	.\alog\List\unorderedlinkedlist.py	/^    def tranversal(self):$/;"	m	class:UnorderedList
+tranversal	.\alog\Stack\my_stack.py	/^    def tranversal(self):$/;"	m	class:Stack
+travel_ids	.\basic\alog\tuple_concept.py	/^travel_ids = [('USA', '31195855'), ('CN', 'CN17280145'),$/;"	v
+traversal	.\alog\List\ListNode_example.py	/^    def traversal(self):$/;"	m	class:LinkedList
+traversal	.\alog\List\ListNode_example2.py	/^    def traversal(self):$/;"	m	class:LinkedList
+traversal	.\alog\leetcode\20_Valid_Parenthese.py	/^    def traversal(self):$/;"	m	class:Stack
+twoSum	.\alog\leetcode\twosum.py	/^    def twoSum(self, nums, target):$/;"	m	class:Solution
+twoSum	.\alog\leetcode\twosum.py	/^    def twoSum(self, nums, target):$/;"	m	class:SolutionSecond
+two_sum	.\advance\LeetCode\001_two_sum.py	/^    def two_sum(self, nums, target):$/;"	m	class:Solution
+two_sum	.\alog\leetcode\twosum.py	/^    def two_sum(self, nums, target):$/;"	m	class:SolutionThird
+two_sum	.\basic\alog\twoSum.py	/^    def two_sum(self, nums, target):$/;"	m	class:Solution
+unittest	.\advance\unitest_example\unittest_test.py	/^import unittest$/;"	i
+urllib3	.\advance\bigdata\mock_data_order.py	/^import urllib3$/;"	i
+urllib3	.\advance\bigdata\mock_data_profile_multi.py	/^import urllib3$/;"	i
+urllib3	.\advance\bigdata\mock_data_tracking_multi.py	/^import urllib3$/;"	i
+user_agent	.\advance\bigdata\mock_data_order.py	/^from faker.providers import internet, profile, user_agent, phone_number, barcode$/;"	i
+user_agent	.\advance\bigdata\mock_data_profile_multi.py	/^from faker.providers import internet,profile,user_agent,phone_number,barcode$/;"	i
+user_agent	.\advance\bigdata\mock_data_tracking_multi.py	/^from faker.providers import internet,profile,user_agent,phone_number,barcode$/;"	i
+wrapper	.\advance\decorators\example_01_decorator.py	/^    def wrapper(*args, **kwargs):$/;"	f	function:check_is_admin
+wrapper	.\advance\decorators\example_02_decorator.py	/^        def wrapper(*args, **kwargs):$/;"	f	function:logged.decorate
+wrapper	.\advance\decorators\example_02_decorator.py	/^    def wrapper(*args, **kwargs):$/;"	f	function:decorator1
+wrapper	.\advance\decorators\example_02_decorator.py	/^    def wrapper(*args, **kwargs):$/;"	f	function:decorator2
+wrapper	.\advance\decorators\example_02_decorator.py	/^    def wrapper(*args, **kwargs):$/;"	f	function:timethis
+wrapper	.\basic\function_concept\decorator_example.py	/^    def wrapper(*args, **kwargs):$/;"	f	function:logger
+wraps	.\advance\decorators\example_02_decorator.py	/^from functools import wraps$/;"	i
+writer	.\advance\lib\faker\faker_example.py	/^    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)$/;"	v
+x	.\advance\OOP\brother_ma_001_oop_example.py	/^    x = 'abc'  # 类的属性$/;"	v	class:MyKlass
+x	.\advance\OOP\brother_ma_001_oop_example.py	/^    x = 'abc'$/;"	v	class:MyClass
+x	.\advance\OOP\brother_ma_007_inheritance.py	/^    x = 'cat'$/;"	v	class:Cat
+x	.\advance\OOP\brother_ma_007_inheritance.py	/^    x = 123$/;"	v	class:Animal
+x	.\advance\OOP\brother_ma_009_override.py	/^    x = 10$/;"	v	class:Cat
+x	.\advance\OOP\example_classmethod.py	/^    x = 1$/;"	v	class:B
+x	.\advance\iteration\iter_test.py	/^x = 'hello'$/;"	v
+x	.\basic\module\example_02\m\__init__.py	/^x = 1/;"	v
+xyz	.\basic\module\example_01\test.py	/^import xyz$/;"	i
+xyz	.\basic\module\example_01\test2.py	/^import xyz$/;"	i
+y	.\basic\module\example_02\m\m1.py	/^y = 5$/;"	v

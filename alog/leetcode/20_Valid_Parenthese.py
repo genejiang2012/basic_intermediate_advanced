@@ -1,3 +1,5 @@
+import pdb
+
 class Stack:
     def __init__(self):
         self.items = []
@@ -18,6 +20,7 @@ class Stack:
 
 class Solution:
     def isValid(self, s: str) -> bool:
+        pdb.set_trace()
         temp_stack = Stack()
         balanced = True
         index = 0
@@ -31,7 +34,9 @@ class Solution:
                 if temp_stack.is_empty():
                     return False
                 else:
-                    temp_stack.pop()
+                    top = temp_stack.pop()
+                    print(top)
+
             index = index + 1
 
         temp_stack.traversal()
@@ -44,6 +49,6 @@ class Solution:
 
 if __name__ == '__main__':
     my_sloution = Solution()
-    test_string = "(]"
+    test_string = "()"
 
     print(my_sloution.isValid(test_string))
