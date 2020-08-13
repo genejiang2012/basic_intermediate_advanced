@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../iTest_httpapi/.idea/iTest_HttpAPI.iml" filepath="$PROJECT_DIR$/../iTest_httpapi/.idea/iTest_HttpAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/py_basic_intermediate_advanced.iml" filepath="$PROJECT_DIR$/.idea/py_basic_intermediate_advanced.iml" />
     </modules>
   </component>
