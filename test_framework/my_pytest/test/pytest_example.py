@@ -9,5 +9,6 @@ class TestCase:
         assert (1, 2, 3) == (3, 2, 1)
 
 
-if __name__ == '__main__':
-    pytest.main(['-q', 'pytest_example.py'])
+if __name__ == "__main__":
+    pytest.main(['-v', 'pytest_example.py'])
+
